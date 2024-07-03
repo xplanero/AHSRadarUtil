@@ -6,5 +6,10 @@ namespace AHSRadarUtil
         {
             InitializeComponent();
         }
+
+        private void btnCirculo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

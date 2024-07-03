@@ -39,6 +39,7 @@
             btnCirculo.TabIndex = 0;
             btnCirculo.Text = "Circulo";
             btnCirculo.UseVisualStyleBackColor = true;
+            btnCirculo.Click += btnCirculo_Click;
             // 
             // Principal
             // 
