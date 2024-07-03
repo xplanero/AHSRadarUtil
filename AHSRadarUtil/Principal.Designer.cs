@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnCirculo = new Button();
+            SuspendLayout();
+            // 
+            // btnCirculo
+            // 
+            btnCirculo.Location = new Point(24, 30);
+            btnCirculo.Name = "btnCirculo";
+            btnCirculo.Size = new Size(112, 34);
+            btnCirculo.TabIndex = 0;
+            btnCirculo.Text = "Circulo";
+            btnCirculo.UseVisualStyleBackColor = true;
+            // 
+            // Principal
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnCirculo);
+            Name = "Principal";
+            Text = "UTILIDADES RADAR AIRHISPANIA";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnCirculo;
     }
 }
