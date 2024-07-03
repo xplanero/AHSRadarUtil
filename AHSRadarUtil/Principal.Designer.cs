@@ -29,24 +29,38 @@
         private void InitializeComponent()
         {
             btnCirculo = new Button();
+            btnSalir = new Button();
             SuspendLayout();
             // 
             // btnCirculo
             // 
-            btnCirculo.Location = new Point(24, 30);
+            btnCirculo.Location = new Point(36, 44);
+            btnCirculo.Margin = new Padding(4, 4, 4, 4);
             btnCirculo.Name = "btnCirculo";
-            btnCirculo.Size = new Size(112, 34);
+            btnCirculo.Size = new Size(168, 50);
             btnCirculo.TabIndex = 0;
             btnCirculo.Text = "Circulo";
             btnCirculo.UseVisualStyleBackColor = true;
             btnCirculo.Click += btnCirculo_Click;
             // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(974, 566);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(169, 52);
+            btnSalir.TabIndex = 1;
+            btnSalir.Text = "SALIR";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // Principal
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1200, 666);
+            Controls.Add(btnSalir);
             Controls.Add(btnCirculo);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Principal";
             Text = "UTILIDADES RADAR AIRHISPANIA";
             ResumeLayout(false);
@@ -55,5 +69,6 @@
         #endregion
 
         private Button btnCirculo;
+        private Button btnSalir;
     }
 }
