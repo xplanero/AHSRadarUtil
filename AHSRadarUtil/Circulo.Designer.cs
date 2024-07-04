@@ -39,108 +39,132 @@
             tBoxRadio1 = new TextBox();
             tBoxRadio2 = new TextBox();
             btnGenerar = new Button();
+            btnMenu = new Button();
             tBoxCentro = new TextBox();
             SuspendLayout();
             // 
             // tBoxCentro
             // 
-            tBoxCentro.Location = new Point(332, 18);
+            tBoxCentro.Location = new Point(155, 7);
+            tBoxCentro.Margin = new Padding(1);
             tBoxCentro.Name = "tBoxCentro";
-            tBoxCentro.Size = new Size(445, 43);
+            tBoxCentro.Size = new Size(210, 23);
             tBoxCentro.TabIndex = 0;
             tBoxCentro.Text = "N037.50.30.300 W002.50.30.300";
             // 
             // lblCentro
             // 
             lblCentro.AutoSize = true;
-            lblCentro.Location = new Point(19, 24);
+            lblCentro.Location = new Point(9, 10);
+            lblCentro.Margin = new Padding(1, 0, 1, 0);
             lblCentro.Name = "lblCentro";
-            lblCentro.Size = new Size(307, 37);
+            lblCentro.Size = new Size(136, 15);
             lblCentro.TabIndex = 1;
             lblCentro.Text = "Coordenadas del centro:";
             // 
             // lblColor
             // 
             lblColor.AutoSize = true;
-            lblColor.Location = new Point(238, 76);
+            lblColor.Location = new Point(111, 31);
+            lblColor.Margin = new Padding(1, 0, 1, 0);
             lblColor.Name = "lblColor";
-            lblColor.Size = new Size(88, 37);
+            lblColor.Size = new Size(39, 15);
             lblColor.TabIndex = 2;
             lblColor.Text = "Color:";
             // 
             // tBoxColor
             // 
-            tBoxColor.Location = new Point(332, 73);
+            tBoxColor.Location = new Point(155, 30);
+            tBoxColor.Margin = new Padding(1);
             tBoxColor.Name = "tBoxColor";
-            tBoxColor.Size = new Size(225, 43);
+            tBoxColor.Size = new Size(107, 23);
             tBoxColor.TabIndex = 3;
             tBoxColor.Text = "parking";
             // 
             // lblcantidad
             // 
             lblcantidad.AutoSize = true;
-            lblcantidad.Location = new Point(74, 130);
+            lblcantidad.Location = new Point(35, 53);
+            lblcantidad.Margin = new Padding(1, 0, 1, 0);
             lblcantidad.Name = "lblcantidad";
-            lblcantidad.Size = new Size(252, 37);
+            lblcantidad.Size = new Size(110, 15);
             lblcantidad.TabIndex = 4;
             lblcantidad.Text = "1 o 2 para HELIPAD:";
             // 
             // tBoxNumero
             // 
-            tBoxNumero.Location = new Point(332, 130);
+            tBoxNumero.Location = new Point(155, 53);
+            tBoxNumero.Margin = new Padding(1);
             tBoxNumero.Name = "tBoxNumero";
-            tBoxNumero.Size = new Size(40, 43);
+            tBoxNumero.Size = new Size(21, 23);
             tBoxNumero.TabIndex = 5;
             tBoxNumero.Text = "1";
             // 
             // lblRadio1
             // 
             lblRadio1.AutoSize = true;
-            lblRadio1.Location = new Point(127, 190);
+            lblRadio1.Location = new Point(59, 77);
+            lblRadio1.Margin = new Padding(1, 0, 1, 0);
             lblRadio1.Name = "lblRadio1";
-            lblRadio1.Size = new Size(199, 37);
+            lblRadio1.Size = new Size(88, 15);
             lblRadio1.TabIndex = 6;
             lblRadio1.Text = "Radio círculo 1:";
             // 
             // lblCirculo2
             // 
             lblCirculo2.AutoSize = true;
-            lblCirculo2.Location = new Point(127, 245);
+            lblCirculo2.Location = new Point(59, 99);
+            lblCirculo2.Margin = new Padding(1, 0, 1, 0);
             lblCirculo2.Name = "lblCirculo2";
-            lblCirculo2.Size = new Size(199, 37);
+            lblCirculo2.Size = new Size(88, 15);
             lblCirculo2.TabIndex = 7;
             lblCirculo2.Text = "Radio círculo 2:";
             // 
             // tBoxRadio1
             // 
-            tBoxRadio1.Location = new Point(332, 190);
+            tBoxRadio1.Location = new Point(155, 77);
+            tBoxRadio1.Margin = new Padding(1);
             tBoxRadio1.Name = "tBoxRadio1";
-            tBoxRadio1.Size = new Size(60, 43);
+            tBoxRadio1.Size = new Size(30, 23);
             tBoxRadio1.TabIndex = 8;
             tBoxRadio1.Text = "5";
             // 
             // tBoxRadio2
             // 
-            tBoxRadio2.Location = new Point(332, 245);
+            tBoxRadio2.Location = new Point(155, 99);
+            tBoxRadio2.Margin = new Padding(1);
             tBoxRadio2.Name = "tBoxRadio2";
-            tBoxRadio2.Size = new Size(60, 43);
+            tBoxRadio2.Size = new Size(30, 23);
             tBoxRadio2.TabIndex = 9;
             tBoxRadio2.Text = "12";
             // 
             // btnGenerar
             // 
-            btnGenerar.Location = new Point(223, 373);
+            btnGenerar.Location = new Point(104, 151);
+            btnGenerar.Margin = new Padding(1);
             btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(169, 52);
+            btnGenerar.Size = new Size(79, 21);
             btnGenerar.TabIndex = 10;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = true;
+            btnGenerar.Click += btnGenerar_Click;
+            // 
+            // btnMenu
+            // 
+            btnMenu.Location = new Point(307, 151);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(75, 23);
+            btnMenu.TabIndex = 11;
+            btnMenu.Text = "MENÚ";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
             // 
             // Circulo
             // 
-            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(844, 450);
+            ClientSize = new Size(394, 182);
+            Controls.Add(btnMenu);
             Controls.Add(btnGenerar);
             Controls.Add(tBoxRadio2);
             Controls.Add(tBoxRadio1);
@@ -152,6 +176,7 @@
             Controls.Add(lblColor);
             Controls.Add(lblCentro);
             Controls.Add(tBoxCentro);
+            Margin = new Padding(1);
             Name = "Circulo";
             Text = "Construcción de circulos";
             ResumeLayout(false);
@@ -170,5 +195,6 @@
         private TextBox tBoxRadio1;
         private TextBox tBoxRadio2;
         private Button btnGenerar;
+        private Button btnMenu;
     }
 }
