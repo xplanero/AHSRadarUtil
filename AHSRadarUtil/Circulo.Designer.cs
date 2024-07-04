@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TextBox tBoxCentro;
             lblCentro = new Label();
             lblColor = new Label();
             tBoxColor = new TextBox();
@@ -42,15 +41,6 @@
             btnMenu = new Button();
             tBoxCentro = new TextBox();
             SuspendLayout();
-            // 
-            // tBoxCentro
-            // 
-            tBoxCentro.Location = new Point(155, 7);
-            tBoxCentro.Margin = new Padding(1);
-            tBoxCentro.Name = "tBoxCentro";
-            tBoxCentro.Size = new Size(210, 23);
-            tBoxCentro.TabIndex = 0;
-            tBoxCentro.Text = "N037.50.30.300 W002.50.30.300";
             // 
             // lblCentro
             // 
@@ -159,11 +149,20 @@
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
+            // tBoxCentro
+            // 
+            tBoxCentro.Location = new Point(155, 3);
+            tBoxCentro.Name = "tBoxCentro";
+            tBoxCentro.Size = new Size(227, 23);
+            tBoxCentro.TabIndex = 12;
+            tBoxCentro.Text = "N037.06.00.000 W004.33.43.000";
+            // 
             // Circulo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(394, 182);
+            Controls.Add(tBoxCentro);
             Controls.Add(btnMenu);
             Controls.Add(btnGenerar);
             Controls.Add(tBoxRadio2);
@@ -175,7 +174,6 @@
             Controls.Add(tBoxColor);
             Controls.Add(lblColor);
             Controls.Add(lblCentro);
-            Controls.Add(tBoxCentro);
             Margin = new Padding(1);
             Name = "Circulo";
             Text = "Construcción de circulos";
@@ -196,5 +194,6 @@
         private TextBox tBoxRadio2;
         private Button btnGenerar;
         private Button btnMenu;
+        private TextBox tBoxCentro;
     }
 }
