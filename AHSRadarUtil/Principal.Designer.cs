@@ -30,14 +30,15 @@
         {
             btnCirculo = new Button();
             btnSalir = new Button();
+            btnEncontrar = new Button();
             SuspendLayout();
             // 
             // btnCirculo
             // 
-            btnCirculo.Location = new Point(36, 44);
-            btnCirculo.Margin = new Padding(4, 4, 4, 4);
+            btnCirculo.Location = new Point(17, 11);
+            btnCirculo.Margin = new Padding(2);
             btnCirculo.Name = "btnCirculo";
-            btnCirculo.Size = new Size(168, 50);
+            btnCirculo.Size = new Size(78, 23);
             btnCirculo.TabIndex = 0;
             btnCirculo.Text = "Circulo";
             btnCirculo.UseVisualStyleBackColor = true;
@@ -45,22 +46,34 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(974, 566);
+            btnSalir.Location = new Point(455, 229);
+            btnSalir.Margin = new Padding(1);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(169, 52);
+            btnSalir.Size = new Size(79, 21);
             btnSalir.TabIndex = 1;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
+            // btnEncontrar
+            // 
+            btnEncontrar.Location = new Point(17, 43);
+            btnEncontrar.Name = "btnEncontrar";
+            btnEncontrar.Size = new Size(78, 23);
+            btnEncontrar.TabIndex = 2;
+            btnEncontrar.Text = "Encontrar";
+            btnEncontrar.UseVisualStyleBackColor = true;
+            btnEncontrar.Click += btnEncontrar_Click;
+            // 
             // Principal
             // 
-            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 666);
+            ClientSize = new Size(560, 270);
+            Controls.Add(btnEncontrar);
             Controls.Add(btnSalir);
             Controls.Add(btnCirculo);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(2);
             Name = "Principal";
             Text = "UTILIDADES RADAR AIRHISPANIA";
             ResumeLayout(false);
@@ -70,5 +83,6 @@
 
         private Button btnCirculo;
         private Button btnSalir;
+        private Button btnEncontrar;
     }
 }

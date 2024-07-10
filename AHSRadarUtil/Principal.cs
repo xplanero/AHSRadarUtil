@@ -18,5 +18,11 @@ namespace AHSRadarUtil
         {
             Application.Exit();
         }
+
+        private void btnEncontrar_Click(object sender, EventArgs e)
+        {
+            Encontrar encontrar = new Encontrar();
+            encontrar.ShowDialog();
+        }
     }
 }
