@@ -1,14 +1,4 @@
-﻿using Microsoft.VisualBasic.Devices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Globalization;
 
 namespace AHSRadarUtil
 {
@@ -32,10 +22,10 @@ namespace AHSRadarUtil
 
             // Convierte las coordenadas a decimal
             (double latCentro, double lonCentro) = ConvertirCoordenadasADecimal(centro);
-            
+
             // Calcula los segmentos del círculo 1
             var segmentos1 = CalcularSegmentosCirculo(latCentro, lonCentro, radio1);
-            
+
             // Genera el archivo de texto con los segmentos circulo 1
             GenerarArchivoDeSegmentos(segmentos1, tBoxColor.Text, "segmentos.txt");
 

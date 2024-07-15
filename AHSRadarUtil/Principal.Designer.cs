@@ -31,14 +31,14 @@
             btnCirculo = new Button();
             btnSalir = new Button();
             btnEncontrar = new Button();
+            btnFileInt = new Button();
             SuspendLayout();
             // 
             // btnCirculo
             // 
-            btnCirculo.Location = new Point(17, 11);
-            btnCirculo.Margin = new Padding(2);
+            btnCirculo.Location = new Point(24, 18);
             btnCirculo.Name = "btnCirculo";
-            btnCirculo.Size = new Size(78, 23);
+            btnCirculo.Size = new Size(111, 38);
             btnCirculo.TabIndex = 0;
             btnCirculo.Text = "Circulo";
             btnCirculo.UseVisualStyleBackColor = true;
@@ -46,10 +46,10 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(455, 229);
-            btnSalir.Margin = new Padding(1);
+            btnSalir.Location = new Point(650, 382);
+            btnSalir.Margin = new Padding(1, 2, 1, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(79, 21);
+            btnSalir.Size = new Size(113, 35);
             btnSalir.TabIndex = 1;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = true;
@@ -57,23 +57,34 @@
             // 
             // btnEncontrar
             // 
-            btnEncontrar.Location = new Point(17, 43);
+            btnEncontrar.Location = new Point(24, 72);
+            btnEncontrar.Margin = new Padding(4, 5, 4, 5);
             btnEncontrar.Name = "btnEncontrar";
-            btnEncontrar.Size = new Size(78, 23);
+            btnEncontrar.Size = new Size(111, 38);
             btnEncontrar.TabIndex = 2;
             btnEncontrar.Text = "Encontrar";
             btnEncontrar.UseVisualStyleBackColor = true;
             btnEncontrar.Click += btnEncontrar_Click;
             // 
+            // btnFileInt
+            // 
+            btnFileInt.Location = new Point(171, 18);
+            btnFileInt.Name = "btnFileInt";
+            btnFileInt.Size = new Size(112, 34);
+            btnFileInt.TabIndex = 3;
+            btnFileInt.Text = "Integridad";
+            btnFileInt.UseVisualStyleBackColor = true;
+            btnFileInt.Click += btnFileInt_Click;
+            // 
             // Principal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnFileInt);
             Controls.Add(btnEncontrar);
             Controls.Add(btnSalir);
             Controls.Add(btnCirculo);
-            Margin = new Padding(2);
             Name = "Principal";
             Text = "UTILIDADES RADAR AIRHISPANIA";
             ResumeLayout(false);
@@ -84,5 +95,6 @@
         private Button btnCirculo;
         private Button btnSalir;
         private Button btnEncontrar;
+        private Button btnFileInt;
     }
 }

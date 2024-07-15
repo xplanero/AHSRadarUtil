@@ -24,5 +24,11 @@ namespace AHSRadarUtil
             Encontrar encontrar = new Encontrar();
             encontrar.ShowDialog();
         }
+
+        private void btnFileInt_Click(object sender, EventArgs e)
+        {
+            IntFile intFile = new IntFile();
+            intFile.ShowDialog();
+        }
     }
 }
