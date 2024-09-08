@@ -30,5 +30,17 @@ namespace AHSRadarUtil
             IntFile intFile = new IntFile();
             intFile.ShowDialog();
         }
+
+        private void btnArco_Click(object sender, EventArgs e)
+        {
+            Arco arco = new Arco();
+            arco.ShowDialog();
+        }
+
+        private void btnAreas_Click(object sender, EventArgs e)
+        {
+            Areas areas = new Areas();
+            areas.ShowDialog();
+        }
     }
 }

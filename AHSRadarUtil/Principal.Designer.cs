@@ -32,6 +32,8 @@
             btnSalir = new Button();
             btnEncontrar = new Button();
             btnFileInt = new Button();
+            btnArco = new Button();
+            btnAreas = new Button();
             SuspendLayout();
             // 
             // btnCirculo
@@ -57,7 +59,7 @@
             // 
             // btnEncontrar
             // 
-            btnEncontrar.Location = new Point(24, 72);
+            btnEncontrar.Location = new Point(171, 73);
             btnEncontrar.Margin = new Padding(4, 5, 4, 5);
             btnEncontrar.Name = "btnEncontrar";
             btnEncontrar.Size = new Size(111, 38);
@@ -70,17 +72,39 @@
             // 
             btnFileInt.Location = new Point(171, 18);
             btnFileInt.Name = "btnFileInt";
-            btnFileInt.Size = new Size(112, 34);
+            btnFileInt.Size = new Size(111, 38);
             btnFileInt.TabIndex = 3;
             btnFileInt.Text = "Integridad";
             btnFileInt.UseVisualStyleBackColor = true;
             btnFileInt.Click += btnFileInt_Click;
+            // 
+            // btnArco
+            // 
+            btnArco.Location = new Point(24, 77);
+            btnArco.Name = "btnArco";
+            btnArco.Size = new Size(112, 34);
+            btnArco.TabIndex = 4;
+            btnArco.Text = "Arco";
+            btnArco.UseVisualStyleBackColor = true;
+            btnArco.Click += btnArco_Click;
+            // 
+            // btnAreas
+            // 
+            btnAreas.Location = new Point(320, 22);
+            btnAreas.Name = "btnAreas";
+            btnAreas.Size = new Size(112, 34);
+            btnAreas.TabIndex = 5;
+            btnAreas.Text = "Areas";
+            btnAreas.UseVisualStyleBackColor = true;
+            btnAreas.Click += btnAreas_Click;
             // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAreas);
+            Controls.Add(btnArco);
             Controls.Add(btnFileInt);
             Controls.Add(btnEncontrar);
             Controls.Add(btnSalir);
@@ -96,5 +120,7 @@
         private Button btnSalir;
         private Button btnEncontrar;
         private Button btnFileInt;
+        private Button btnArco;
+        private Button btnAreas;
     }
 }

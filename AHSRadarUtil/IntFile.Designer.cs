@@ -38,24 +38,27 @@
             // lblText1
             // 
             lblText1.AutoSize = true;
-            lblText1.Location = new Point(30, 21);
+            lblText1.Location = new Point(21, 13);
+            lblText1.Margin = new Padding(2, 0, 2, 0);
             lblText1.Name = "lblText1";
-            lblText1.Size = new Size(257, 25);
+            lblText1.Size = new Size(169, 15);
             lblText1.TabIndex = 0;
             lblText1.Text = "Archivo de sectores rádar AHS.";
             // 
             // tBoxArchivoRadar
             // 
-            tBoxArchivoRadar.Location = new Point(30, 49);
+            tBoxArchivoRadar.Location = new Point(21, 29);
+            tBoxArchivoRadar.Margin = new Padding(2);
             tBoxArchivoRadar.Name = "tBoxArchivoRadar";
-            tBoxArchivoRadar.Size = new Size(892, 31);
+            tBoxArchivoRadar.Size = new Size(626, 23);
             tBoxArchivoRadar.TabIndex = 1;
             // 
             // btnSelecFichRadar
             // 
-            btnSelecFichRadar.Location = new Point(942, 49);
+            btnSelecFichRadar.Location = new Point(659, 29);
+            btnSelecFichRadar.Margin = new Padding(2);
             btnSelecFichRadar.Name = "btnSelecFichRadar";
-            btnSelecFichRadar.Size = new Size(112, 34);
+            btnSelecFichRadar.Size = new Size(78, 20);
             btnSelecFichRadar.TabIndex = 2;
             btnSelecFichRadar.Text = "Seleccionar";
             btnSelecFichRadar.UseVisualStyleBackColor = true;
@@ -63,10 +66,9 @@
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(815, 128);
-            btnMenu.Margin = new Padding(4, 5, 4, 5);
+            btnMenu.Location = new Point(570, 77);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(107, 38);
+            btnMenu.Size = new Size(75, 23);
             btnMenu.TabIndex = 10;
             btnMenu.Text = "Menú";
             btnMenu.UseMnemonic = false;
@@ -75,9 +77,10 @@
             // 
             // btnAnalizar
             // 
-            btnAnalizar.Location = new Point(40, 128);
+            btnAnalizar.Location = new Point(28, 74);
+            btnAnalizar.Margin = new Padding(2);
             btnAnalizar.Name = "btnAnalizar";
-            btnAnalizar.Size = new Size(112, 34);
+            btnAnalizar.Size = new Size(78, 23);
             btnAnalizar.TabIndex = 11;
             btnAnalizar.Text = "Analizar";
             btnAnalizar.UseVisualStyleBackColor = true;
@@ -85,14 +88,15 @@
             // 
             // IntFile
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1088, 209);
+            ClientSize = new Size(762, 125);
             Controls.Add(btnAnalizar);
             Controls.Add(btnMenu);
             Controls.Add(btnSelecFichRadar);
             Controls.Add(tBoxArchivoRadar);
             Controls.Add(lblText1);
+            Margin = new Padding(2);
             Name = "IntFile";
             Text = "Integridad fichero de radar";
             ResumeLayout(false);
