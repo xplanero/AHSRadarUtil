@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             btnMenu = new Button();
-            btnGenerar = new Button();
-            lblCentro = new Label();
             lblRadio = new Label();
             lblInicio = new Label();
             lblFin = new Label();
-            tBoxCentro = new TextBox();
             tBoxRadio = new TextBox();
             tBoxPuntoInicio = new TextBox();
             tBoxPuntoFin = new TextBox();
@@ -42,42 +39,36 @@
             lblSentido = new Label();
             lblNSegmentos = new Label();
             tBoxNumeroSegmentos = new TextBox();
+            lblCentroCirculo = new Label();
+            tBoxCentro = new TextBox();
+            lblNumeroEspacios = new Label();
+            tBoxNumeroEspacios = new TextBox();
+            btnCalcularEquidistancia = new Button();
+            lblPuntoEquidistante1 = new Label();
+            lblPuntoEquidistante2 = new Label();
+            btnArco180 = new Button();
+            btnArcoRadio = new Button();
+            tBoxEquidistancia = new TextBox();
+            btnLeerArchivoMarcas = new Button();
+            lblArchivoMarcas = new Label();
+            tBoxArchivoMarcas = new TextBox();
+            btnBuscarMarcas = new Button();
             SuspendLayout();
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(437, 387);
+            btnMenu.Location = new Point(529, 916);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(112, 34);
+            btnMenu.Size = new Size(111, 33);
             btnMenu.TabIndex = 1;
             btnMenu.Text = "MENÚ";
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
-            // btnGenerar
-            // 
-            btnGenerar.Location = new Point(66, 387);
-            btnGenerar.Margin = new Padding(1, 2, 1, 2);
-            btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(113, 35);
-            btnGenerar.TabIndex = 11;
-            btnGenerar.Text = "Generar";
-            btnGenerar.UseVisualStyleBackColor = true;
-            btnGenerar.Click += btnGenerar_Click;
-            // 
-            // lblCentro
-            // 
-            lblCentro.AutoSize = true;
-            lblCentro.Location = new Point(45, 43);
-            lblCentro.Name = "lblCentro";
-            lblCentro.Size = new Size(206, 25);
-            lblCentro.TabIndex = 12;
-            lblCentro.Text = "Coordenadas del centro:";
-            // 
             // lblRadio
             // 
             lblRadio.AutoSize = true;
-            lblRadio.Location = new Point(131, 89);
+            lblRadio.Location = new Point(109, 27);
             lblRadio.Name = "lblRadio";
             lblRadio.Size = new Size(120, 25);
             lblRadio.TabIndex = 13;
@@ -86,7 +77,7 @@
             // lblInicio
             // 
             lblInicio.AutoSize = true;
-            lblInicio.Location = new Point(66, 135);
+            lblInicio.Location = new Point(36, 64);
             lblInicio.Name = "lblInicio";
             lblInicio.Size = new Size(193, 25);
             lblInicio.TabIndex = 14;
@@ -95,58 +86,50 @@
             // lblFin
             // 
             lblFin.AutoSize = true;
-            lblFin.Location = new Point(66, 184);
+            lblFin.Location = new Point(44, 98);
             lblFin.Name = "lblFin";
             lblFin.Size = new Size(185, 25);
             lblFin.TabIndex = 15;
             lblFin.Text = "Coordenadas de final:";
             // 
-            // tBoxCentro
-            // 
-            tBoxCentro.Location = new Point(262, 37);
-            tBoxCentro.Name = "tBoxCentro";
-            tBoxCentro.Size = new Size(287, 31);
-            tBoxCentro.TabIndex = 16;
-            tBoxCentro.Text = "N027.46.47.000 W015.30.24.000";
-            // 
             // tBoxRadio
             // 
-            tBoxRadio.Location = new Point(262, 83);
+            tBoxRadio.Location = new Point(239, 24);
             tBoxRadio.Name = "tBoxRadio";
             tBoxRadio.Size = new Size(94, 31);
             tBoxRadio.TabIndex = 17;
-            tBoxRadio.Text = "2,00";
+            tBoxRadio.Text = "3";
             tBoxRadio.TextAlign = HorizontalAlignment.Right;
             // 
             // tBoxPuntoInicio
             // 
-            tBoxPuntoInicio.Location = new Point(262, 129);
+            tBoxPuntoInicio.Location = new Point(239, 61);
             tBoxPuntoInicio.Name = "tBoxPuntoInicio";
             tBoxPuntoInicio.Size = new Size(287, 31);
             tBoxPuntoInicio.TabIndex = 18;
-            tBoxPuntoInicio.Text = "N027.44.49.000 W015.30.52.000";
+            tBoxPuntoInicio.Text = "N028.33.42.679 W016.16.14.768";
             // 
             // tBoxPuntoFin
             // 
-            tBoxPuntoFin.Location = new Point(262, 178);
+            tBoxPuntoFin.Location = new Point(239, 98);
             tBoxPuntoFin.Name = "tBoxPuntoFin";
             tBoxPuntoFin.Size = new Size(287, 31);
             tBoxPuntoFin.TabIndex = 19;
-            tBoxPuntoFin.Text = "N027.48.33.000 W015.29.20.000";
+            tBoxPuntoFin.Text = "N028.32.47.376 W016.18.07.825";
             // 
             // comboBoxSentido
             // 
             comboBoxSentido.FormattingEnabled = true;
-            comboBoxSentido.Location = new Point(264, 231);
+            comboBoxSentido.Location = new Point(239, 172);
             comboBoxSentido.Name = "comboBoxSentido";
-            comboBoxSentido.Size = new Size(182, 33);
+            comboBoxSentido.Size = new Size(183, 33);
             comboBoxSentido.TabIndex = 20;
             comboBoxSentido.Text = "Horario";
             // 
             // lblSentido
             // 
             lblSentido.AutoSize = true;
-            lblSentido.Location = new Point(112, 239);
+            lblSentido.Location = new Point(90, 175);
             lblSentido.Name = "lblSentido";
             lblSentido.Size = new Size(139, 25);
             lblSentido.TabIndex = 21;
@@ -155,7 +138,7 @@
             // lblNSegmentos
             // 
             lblNSegmentos.AutoSize = true;
-            lblNSegmentos.Location = new Point(52, 288);
+            lblNSegmentos.Location = new Point(26, 214);
             lblNSegmentos.Name = "lblNSegmentos";
             lblNSegmentos.Size = new Size(199, 25);
             lblNSegmentos.TabIndex = 22;
@@ -163,18 +146,164 @@
             // 
             // tBoxNumeroSegmentos
             // 
-            tBoxNumeroSegmentos.Location = new Point(264, 282);
+            tBoxNumeroSegmentos.Location = new Point(239, 211);
             tBoxNumeroSegmentos.Name = "tBoxNumeroSegmentos";
-            tBoxNumeroSegmentos.Size = new Size(79, 31);
+            tBoxNumeroSegmentos.Size = new Size(78, 31);
             tBoxNumeroSegmentos.TabIndex = 23;
             tBoxNumeroSegmentos.Text = "18";
             tBoxNumeroSegmentos.TextAlign = HorizontalAlignment.Right;
+            // 
+            // lblCentroCirculo
+            // 
+            lblCentroCirculo.AutoSize = true;
+            lblCentroCirculo.Location = new Point(49, 138);
+            lblCentroCirculo.Name = "lblCentroCirculo";
+            lblCentroCirculo.Size = new Size(180, 25);
+            lblCentroCirculo.TabIndex = 24;
+            lblCentroCirculo.Text = "Coordenadas Centro:";
+            // 
+            // tBoxCentro
+            // 
+            tBoxCentro.Location = new Point(239, 135);
+            tBoxCentro.Name = "tBoxCentro";
+            tBoxCentro.Size = new Size(287, 31);
+            tBoxCentro.TabIndex = 25;
+            tBoxCentro.Text = "N028.34.58.773 W016.18.34.315";
+            // 
+            // lblNumeroEspacios
+            // 
+            lblNumeroEspacios.AutoSize = true;
+            lblNumeroEspacios.Location = new Point(44, 251);
+            lblNumeroEspacios.Name = "lblNumeroEspacios";
+            lblNumeroEspacios.Size = new Size(179, 25);
+            lblNumeroEspacios.TabIndex = 26;
+            lblNumeroEspacios.Text = "Número de espacios:";
+            // 
+            // tBoxNumeroEspacios
+            // 
+            tBoxNumeroEspacios.Location = new Point(239, 248);
+            tBoxNumeroEspacios.Name = "tBoxNumeroEspacios";
+            tBoxNumeroEspacios.Size = new Size(78, 31);
+            tBoxNumeroEspacios.TabIndex = 27;
+            tBoxNumeroEspacios.Text = "26";
+            tBoxNumeroEspacios.TextAlign = HorizontalAlignment.Right;
+            // 
+            // btnCalcularEquidistancia
+            // 
+            btnCalcularEquidistancia.Location = new Point(62, 714);
+            btnCalcularEquidistancia.Margin = new Padding(4, 5, 4, 5);
+            btnCalcularEquidistancia.Name = "btnCalcularEquidistancia";
+            btnCalcularEquidistancia.Size = new Size(229, 38);
+            btnCalcularEquidistancia.TabIndex = 28;
+            btnCalcularEquidistancia.Text = "Calcular equidistancia";
+            btnCalcularEquidistancia.UseVisualStyleBackColor = true;
+            btnCalcularEquidistancia.Click += btnCalcularEquidistancia_Click;
+            // 
+            // lblPuntoEquidistante1
+            // 
+            lblPuntoEquidistante1.AutoSize = true;
+            lblPuntoEquidistante1.Location = new Point(73, 883);
+            lblPuntoEquidistante1.Margin = new Padding(4, 0, 4, 0);
+            lblPuntoEquidistante1.Name = "lblPuntoEquidistante1";
+            lblPuntoEquidistante1.Size = new Size(59, 25);
+            lblPuntoEquidistante1.TabIndex = 29;
+            lblPuntoEquidistante1.Text = "label1";
+            // 
+            // lblPuntoEquidistante2
+            // 
+            lblPuntoEquidistante2.AutoSize = true;
+            lblPuntoEquidistante2.Location = new Point(73, 924);
+            lblPuntoEquidistante2.Margin = new Padding(4, 0, 4, 0);
+            lblPuntoEquidistante2.Name = "lblPuntoEquidistante2";
+            lblPuntoEquidistante2.Size = new Size(59, 25);
+            lblPuntoEquidistante2.TabIndex = 30;
+            lblPuntoEquidistante2.Text = "label2";
+            // 
+            // btnArco180
+            // 
+            btnArco180.Location = new Point(65, 809);
+            btnArco180.Margin = new Padding(4, 5, 4, 5);
+            btnArco180.Name = "btnArco180";
+            btnArco180.Size = new Size(229, 38);
+            btnArco180.TabIndex = 31;
+            btnArco180.Text = "Arco 2 puntos 180";
+            btnArco180.UseVisualStyleBackColor = true;
+            btnArco180.Click += btnArco180_Click;
+            // 
+            // btnArcoRadio
+            // 
+            btnArcoRadio.Location = new Point(69, 624);
+            btnArcoRadio.Margin = new Padding(4, 5, 4, 5);
+            btnArcoRadio.Name = "btnArcoRadio";
+            btnArcoRadio.Size = new Size(229, 38);
+            btnArcoRadio.TabIndex = 32;
+            btnArcoRadio.Text = "Arco 2 puntos Radio";
+            btnArcoRadio.UseVisualStyleBackColor = true;
+            btnArcoRadio.Click += btnArcoRadio_Click;
+            // 
+            // tBoxEquidistancia
+            // 
+            tBoxEquidistancia.Location = new Point(299, 716);
+            tBoxEquidistancia.Margin = new Padding(4, 5, 4, 5);
+            tBoxEquidistancia.Name = "tBoxEquidistancia";
+            tBoxEquidistancia.Size = new Size(338, 31);
+            tBoxEquidistancia.TabIndex = 33;
+            // 
+            // btnLeerArchivoMarcas
+            // 
+            btnLeerArchivoMarcas.Location = new Point(325, 628);
+            btnLeerArchivoMarcas.Name = "btnLeerArchivoMarcas";
+            btnLeerArchivoMarcas.Size = new Size(248, 34);
+            btnLeerArchivoMarcas.TabIndex = 34;
+            btnLeerArchivoMarcas.Text = "Leer archivo de marcas.";
+            btnLeerArchivoMarcas.UseVisualStyleBackColor = true;
+            btnLeerArchivoMarcas.Click += btnLeerArchivoMarcas_Click;
+            // 
+            // lblArchivoMarcas
+            // 
+            lblArchivoMarcas.AutoSize = true;
+            lblArchivoMarcas.Location = new Point(49, 287);
+            lblArchivoMarcas.Name = "lblArchivoMarcas";
+            lblArchivoMarcas.Size = new Size(162, 25);
+            lblArchivoMarcas.TabIndex = 35;
+            lblArchivoMarcas.Text = "Archivo de marcas:";
+            // 
+            // tBoxArchivoMarcas
+            // 
+            tBoxArchivoMarcas.Location = new Point(239, 285);
+            tBoxArchivoMarcas.Name = "tBoxArchivoMarcas";
+            tBoxArchivoMarcas.Size = new Size(595, 31);
+            tBoxArchivoMarcas.TabIndex = 36;
+            // 
+            // btnBuscarMarcas
+            // 
+            btnBuscarMarcas.Location = new Point(860, 287);
+            btnBuscarMarcas.Name = "btnBuscarMarcas";
+            btnBuscarMarcas.Size = new Size(112, 34);
+            btnBuscarMarcas.TabIndex = 37;
+            btnBuscarMarcas.Text = "Buscar";
+            btnBuscarMarcas.UseVisualStyleBackColor = true;
+            btnBuscarMarcas.Click += btnBuscarMarcas_Click;
             // 
             // Arco
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(660, 455);
+            ClientSize = new Size(1521, 1008);
+            Controls.Add(btnBuscarMarcas);
+            Controls.Add(tBoxArchivoMarcas);
+            Controls.Add(lblArchivoMarcas);
+            Controls.Add(btnLeerArchivoMarcas);
+            Controls.Add(tBoxEquidistancia);
+            Controls.Add(btnArcoRadio);
+            Controls.Add(btnArco180);
+            Controls.Add(lblPuntoEquidistante2);
+            Controls.Add(lblPuntoEquidistante1);
+            Controls.Add(btnCalcularEquidistancia);
+            Controls.Add(tBoxNumeroEspacios);
+            Controls.Add(lblNumeroEspacios);
+            Controls.Add(tBoxCentro);
+            Controls.Add(lblCentroCirculo);
             Controls.Add(tBoxNumeroSegmentos);
             Controls.Add(lblNSegmentos);
             Controls.Add(lblSentido);
@@ -182,12 +311,9 @@
             Controls.Add(tBoxPuntoFin);
             Controls.Add(tBoxPuntoInicio);
             Controls.Add(tBoxRadio);
-            Controls.Add(tBoxCentro);
             Controls.Add(lblFin);
             Controls.Add(lblInicio);
             Controls.Add(lblRadio);
-            Controls.Add(lblCentro);
-            Controls.Add(btnGenerar);
             Controls.Add(btnMenu);
             Name = "Arco";
             Text = "Construccion de arcos.";
@@ -198,12 +324,9 @@
         #endregion
 
         private Button btnMenu;
-        private Button btnGenerar;
-        private Label lblCentro;
         private Label lblRadio;
         private Label lblInicio;
         private Label lblFin;
-        private TextBox tBoxCentro;
         private TextBox tBoxRadio;
         private TextBox tBoxPuntoInicio;
         private TextBox tBoxPuntoFin;
@@ -211,5 +334,19 @@
         private Label lblSentido;
         private Label lblNSegmentos;
         private TextBox tBoxNumeroSegmentos;
+        private Label lblCentroCirculo;
+        private TextBox tBoxCentro;
+        private Label lblNumeroEspacios;
+        private TextBox tBoxNumeroEspacios;
+        private Button btnCalcularEquidistancia;
+        private Label lblPuntoEquidistante1;
+        private Label lblPuntoEquidistante2;
+        private Button btnArco180;
+        private Button btnArcoRadio;
+        private TextBox tBoxEquidistancia;
+        private Button btnLeerArchivoMarcas;
+        private Label lblArchivoMarcas;
+        private TextBox tBoxArchivoMarcas;
+        private Button btnBuscarMarcas;
     }
 }

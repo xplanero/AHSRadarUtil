@@ -34,6 +34,7 @@
             btnFileInt = new Button();
             btnArco = new Button();
             btnAreas = new Button();
+            btnDeIvao = new Button();
             SuspendLayout();
             // 
             // btnCirculo
@@ -98,11 +99,22 @@
             btnAreas.UseVisualStyleBackColor = true;
             btnAreas.Click += btnAreas_Click;
             // 
+            // btnDeIvao
+            // 
+            btnDeIvao.Location = new Point(320, 77);
+            btnDeIvao.Name = "btnDeIvao";
+            btnDeIvao.Size = new Size(112, 34);
+            btnDeIvao.TabIndex = 6;
+            btnDeIvao.Text = "IVAO";
+            btnDeIvao.UseVisualStyleBackColor = true;
+            btnDeIvao.Click += btnDeIvao_Click;
+            // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDeIvao);
             Controls.Add(btnAreas);
             Controls.Add(btnArco);
             Controls.Add(btnFileInt);
@@ -122,5 +134,6 @@
         private Button btnFileInt;
         private Button btnArco;
         private Button btnAreas;
+        private Button btnDeIvao;
     }
 }

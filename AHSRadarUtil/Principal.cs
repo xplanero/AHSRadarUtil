@@ -42,5 +42,11 @@ namespace AHSRadarUtil
             Areas areas = new Areas();
             areas.ShowDialog();
         }
+
+        private void btnDeIvao_Click(object sender, EventArgs e)
+        {
+            Ivao ivao = new Ivao();
+            ivao.ShowDialog();
+        }
     }
 }
