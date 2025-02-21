@@ -125,5 +125,7 @@ namespace AHSRadarUtil
             double segundos = ((valor - grados) * 60 - minutos) * 60;
             return $"{direccion}{grados:000}.{minutos:00}.{segundos:00.000}".Replace(",", ".");
         }
+
+
     }
 }

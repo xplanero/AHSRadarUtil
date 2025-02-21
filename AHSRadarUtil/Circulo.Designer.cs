@@ -157,7 +157,7 @@
             tBoxCentro.Name = "tBoxCentro";
             tBoxCentro.Size = new Size(323, 31);
             tBoxCentro.TabIndex = 12;
-            tBoxCentro.Text = "N037.06.00.000 W004.33.43.000";
+            tBoxCentro.Text = "N028.23.24.052 W016.03.48.220";
             // 
             // Circulo
             // 

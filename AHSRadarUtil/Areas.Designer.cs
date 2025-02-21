@@ -32,24 +32,23 @@
             btnR_D_P = new Button();
             btnCargarArchivo = new Button();
             btnMenu = new Button();
+            btnAyuda = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 19);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(23, 11);
             label1.Name = "label1";
-            label1.Size = new Size(317, 25);
+            label1.Size = new Size(209, 15);
             label1.TabIndex = 5;
             label1.Text = "Extraer datos de archivo XML de areas,";
             // 
             // btnR_D_P
             // 
-            btnR_D_P.Location = new Point(168, 74);
-            btnR_D_P.Margin = new Padding(4, 5, 4, 5);
+            btnR_D_P.Location = new Point(118, 44);
             btnR_D_P.Name = "btnR_D_P";
-            btnR_D_P.Size = new Size(107, 38);
+            btnR_D_P.Size = new Size(75, 23);
             btnR_D_P.TabIndex = 4;
             btnR_D_P.Text = "D R P";
             btnR_D_P.UseVisualStyleBackColor = true;
@@ -57,9 +56,10 @@
             // 
             // btnCargarArchivo
             // 
-            btnCargarArchivo.Location = new Point(28, 75);
+            btnCargarArchivo.Location = new Point(20, 45);
+            btnCargarArchivo.Margin = new Padding(2, 2, 2, 2);
             btnCargarArchivo.Name = "btnCargarArchivo";
-            btnCargarArchivo.Size = new Size(111, 33);
+            btnCargarArchivo.Size = new Size(78, 20);
             btnCargarArchivo.TabIndex = 3;
             btnCargarArchivo.Text = "Todas";
             btnCargarArchivo.UseVisualStyleBackColor = true;
@@ -67,25 +67,36 @@
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(323, 182);
-            btnMenu.Margin = new Padding(4, 5, 4, 5);
+            btnMenu.Location = new Point(226, 109);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(107, 38);
+            btnMenu.Size = new Size(75, 23);
             btnMenu.TabIndex = 10;
             btnMenu.Text = "Menú";
             btnMenu.UseMnemonic = false;
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
+            // btnAyuda
+            // 
+            btnAyuda.Location = new Point(20, 109);
+            btnAyuda.Name = "btnAyuda";
+            btnAyuda.Size = new Size(75, 23);
+            btnAyuda.TabIndex = 11;
+            btnAyuda.Text = "Ayuda";
+            btnAyuda.UseVisualStyleBackColor = true;
+            btnAyuda.Click += btnAyuda_Click;
+            // 
             // Areas
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 253);
+            ClientSize = new Size(351, 152);
+            Controls.Add(btnAyuda);
             Controls.Add(btnMenu);
             Controls.Add(label1);
             Controls.Add(btnR_D_P);
             Controls.Add(btnCargarArchivo);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Areas";
             Text = "Areas";
             ResumeLayout(false);
@@ -98,5 +109,6 @@
         private Button btnR_D_P;
         private Button btnCargarArchivo;
         private Button btnMenu;
+        private Button btnAyuda;
     }
 }

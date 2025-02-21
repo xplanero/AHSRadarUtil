@@ -30,13 +30,15 @@
         {
             btnAreasHigh = new Button();
             btnMenu = new Button();
+            btnHolding = new Button();
             SuspendLayout();
             // 
             // btnAreasHigh
             // 
-            btnAreasHigh.Location = new Point(33, 28);
+            btnAreasHigh.Location = new Point(40, 34);
+            btnAreasHigh.Margin = new Padding(4, 4, 4, 4);
             btnAreasHigh.Name = "btnAreasHigh";
-            btnAreasHigh.Size = new Size(112, 34);
+            btnAreasHigh.Size = new Size(134, 41);
             btnAreasHigh.TabIndex = 0;
             btnAreasHigh.Text = "Areas H";
             btnAreasHigh.UseVisualStyleBackColor = true;
@@ -44,23 +46,36 @@
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(347, 206);
-            btnMenu.Margin = new Padding(4, 5, 4, 5);
+            btnMenu.Location = new Point(416, 247);
+            btnMenu.Margin = new Padding(5, 6, 5, 6);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(107, 38);
+            btnMenu.Size = new Size(128, 46);
             btnMenu.TabIndex = 11;
             btnMenu.Text = "Menú";
             btnMenu.UseMnemonic = false;
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
+            // btnHolding
+            // 
+            btnHolding.Location = new Point(40, 83);
+            btnHolding.Margin = new Padding(4);
+            btnHolding.Name = "btnHolding";
+            btnHolding.Size = new Size(134, 41);
+            btnHolding.TabIndex = 12;
+            btnHolding.Text = "Holding";
+            btnHolding.UseVisualStyleBackColor = true;
+            btnHolding.Click += btnHolding_Click;
+            // 
             // Ivao
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(505, 272);
+            ClientSize = new Size(606, 326);
+            Controls.Add(btnHolding);
             Controls.Add(btnMenu);
             Controls.Add(btnAreasHigh);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Ivao";
             Text = "Ivao";
             ResumeLayout(false);
@@ -70,5 +85,6 @@
 
         private Button btnAreasHigh;
         private Button btnMenu;
+        private Button btnHolding;
     }
 }

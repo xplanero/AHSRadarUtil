@@ -35,6 +35,11 @@
             btnArco = new Button();
             btnAreas = new Button();
             btnDeIvao = new Button();
+            btnCopiarArchivos = new Button();
+            BtnFixes = new Button();
+            btnEspera = new Button();
+            btnGoAround = new Button();
+            btnAirac = new Button();
             SuspendLayout();
             // 
             // btnCirculo
@@ -83,7 +88,7 @@
             // 
             btnArco.Location = new Point(24, 77);
             btnArco.Name = "btnArco";
-            btnArco.Size = new Size(112, 34);
+            btnArco.Size = new Size(111, 35);
             btnArco.TabIndex = 4;
             btnArco.Text = "Arco";
             btnArco.UseVisualStyleBackColor = true;
@@ -93,7 +98,7 @@
             // 
             btnAreas.Location = new Point(320, 22);
             btnAreas.Name = "btnAreas";
-            btnAreas.Size = new Size(112, 34);
+            btnAreas.Size = new Size(111, 33);
             btnAreas.TabIndex = 5;
             btnAreas.Text = "Areas";
             btnAreas.UseVisualStyleBackColor = true;
@@ -103,17 +108,73 @@
             // 
             btnDeIvao.Location = new Point(320, 77);
             btnDeIvao.Name = "btnDeIvao";
-            btnDeIvao.Size = new Size(112, 34);
+            btnDeIvao.Size = new Size(111, 33);
             btnDeIvao.TabIndex = 6;
             btnDeIvao.Text = "IVAO";
             btnDeIvao.UseVisualStyleBackColor = true;
             btnDeIvao.Click += btnDeIvao_Click;
+            // 
+            // btnCopiarArchivos
+            // 
+            btnCopiarArchivos.Location = new Point(650, 22);
+            btnCopiarArchivos.Name = "btnCopiarArchivos";
+            btnCopiarArchivos.Size = new Size(111, 33);
+            btnCopiarArchivos.TabIndex = 9;
+            btnCopiarArchivos.Text = "Copiar  AR";
+            btnCopiarArchivos.UseVisualStyleBackColor = true;
+            btnCopiarArchivos.Click += btnCopiarArchivos_Click;
+            // 
+            // BtnFixes
+            // 
+            BtnFixes.Location = new Point(650, 73);
+            BtnFixes.Name = "BtnFixes";
+            BtnFixes.Size = new Size(111, 33);
+            BtnFixes.TabIndex = 10;
+            BtnFixes.Text = "Fixes";
+            BtnFixes.UseVisualStyleBackColor = true;
+            BtnFixes.Click += BtnFixes_Click;
+            // 
+            // btnEspera
+            // 
+            btnEspera.Location = new Point(486, 76);
+            btnEspera.Margin = new Padding(1, 2, 1, 2);
+            btnEspera.Name = "btnEspera";
+            btnEspera.Size = new Size(109, 33);
+            btnEspera.TabIndex = 12;
+            btnEspera.Text = "Esperas";
+            btnEspera.UseVisualStyleBackColor = true;
+            btnEspera.Click += btnEspera_Click;
+            // 
+            // btnGoAround
+            // 
+            btnGoAround.Location = new Point(486, 23);
+            btnGoAround.Name = "btnGoAround";
+            btnGoAround.Size = new Size(111, 33);
+            btnGoAround.TabIndex = 13;
+            btnGoAround.Text = "Go Around";
+            btnGoAround.UseVisualStyleBackColor = true;
+            btnGoAround.Click += btnGoAround_Click;
+            // 
+            // btnAirac
+            // 
+            btnAirac.Location = new Point(24, 133);
+            btnAirac.Name = "btnAirac";
+            btnAirac.Size = new Size(112, 34);
+            btnAirac.TabIndex = 14;
+            btnAirac.Text = "Airac";
+            btnAirac.UseVisualStyleBackColor = true;
+            btnAirac.Click += btnAirac_Click;
             // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAirac);
+            Controls.Add(btnGoAround);
+            Controls.Add(btnEspera);
+            Controls.Add(BtnFixes);
+            Controls.Add(btnCopiarArchivos);
             Controls.Add(btnDeIvao);
             Controls.Add(btnAreas);
             Controls.Add(btnArco);
@@ -135,5 +196,10 @@
         private Button btnArco;
         private Button btnAreas;
         private Button btnDeIvao;
+        private Button btnCopiarArchivos;
+        private Button BtnFixes;
+        private Button btnEspera;
+        private Button btnGoAround;
+        private Button btnAirac;
     }
 }

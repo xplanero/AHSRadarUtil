@@ -1,11 +1,5 @@
-﻿using Microsoft.VisualBasic.Logging;
-using System;
-using System.Diagnostics;
-using System.Net;
-using System.Reflection.Metadata;
+﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
-using System.Windows.Forms.VisualStyles;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AHSRadarUtil
 {
@@ -92,10 +86,10 @@ namespace AHSRadarUtil
             }
 
             MessageBox.Show($"Se han procesado {lineCount} líneas.");
-            
+
 
         }
-        
+
         static List<string> ValidateFile(string[] lines, Dictionary<string, string> diccionario)
         {
             var errors = new List<string>();
@@ -303,9 +297,9 @@ namespace AHSRadarUtil
                     {
                         errors.Add($"Línea {i + 1}: {linea} Referencia no encontrada.");
                     }
-                    
-                    
-                    
+
+
+
                 }
                 if (latitud2.Length == 14 && longitud2.Length == 14)
                 {
@@ -327,7 +321,7 @@ namespace AHSRadarUtil
 
             }
             return errors;
-            
+
 
         }
         static List<string> ProcesarGeo(string linea, List<string> errors, int i)
@@ -344,8 +338,8 @@ namespace AHSRadarUtil
             Dictionary<string, string> fixes = new Dictionary<string, string>();
             foreach (string linea in radar)
             {
-                int longitudLinea = Math.Min(linea.Trim().Length-6, 29);
-                
+                int longitudLinea = Math.Min(linea.Trim().Length - 6, 29);
+
                 if (linea.StartsWith("["))
                 {
                     bloque = linea.Trim();

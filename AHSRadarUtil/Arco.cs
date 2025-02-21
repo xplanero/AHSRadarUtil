@@ -1,10 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-
-namespace AHSRadarUtil
+﻿namespace AHSRadarUtil
 {
     public partial class Arco : Form
     {
@@ -20,118 +14,105 @@ namespace AHSRadarUtil
             this.Close();
         }
 
-        //método principal donde se genera la circunferencia completa y se comprueba si pasa por los puntos
-        private void btnGenerar_Click(object sender, EventArgs e)
+
+
+
+        private void btn2PuntosCentro_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Obtenemos los puntos de inicio y fin
-                Coordenadas puntoInicio = new Coordenadas(tBoxPuntoInicio.Text);
-                Coordenadas puntoFin = new Coordenadas(tBoxPuntoFin.Text);
-                Coordenadas centro = new Coordenadas(tBoxCentro.Text);
+            Coordenadas inicio = new Coordenadas(tBoxPuntoInicio.Text);
+            Coordenadas fin = new Coordenadas(tBoxPuntoFin.Text);
+            Coordenadas centro = new Coordenadas(tBoxCentro.Text);
+            int numeroSegmentos = int.Parse(tBoxNumeroSegmentos.Text);
+            int numeroEspacios = int.Parse(tBoxNumeroEspacios.Text);
 
-                int numeroDeSegmentos = Convert.ToInt32(tBoxNumeroSegmentos.Text);
-                int numeroDeEspacios = Convert.ToInt32(tBoxNumeroEspacios.Text);
+            bool sentidoGiro = (comboBoxSentido.SelectedIndex == 0) ? true : false;
 
-                Coordenadas.CrearArco(puntoInicio, puntoFin, centro, numeroDeSegmentos, numeroDeEspacios);
+            Coordenadas.DibujarArco(inicio, fin, centro, sentidoGiro, numeroSegmentos, numeroEspacios);
+            MessageBox.Show("Arco generado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
-                MessageBox.Show("Arco generado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+
+        private void btnCirculoCentroRadio_Click(object sender, EventArgs e)
+        {
+            Coordenadas centro = new Coordenadas(tBoxCentro.Text);
+            Double radio = double.Parse(tBoxRadio.Text);
+            centro.DibujarCirculo(radio);
         }
 
         private void btnCalcularEquidistancia_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show($"No hace nada de momento", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Coordenadas puntoInicio = new Coordenadas(tBoxPuntoInicio.Text);
-            Coordenadas puntoFin = new Coordenadas(tBoxPuntoFin.Text);
-            Coordenadas centro = new Coordenadas(tBoxCentro.Text);
-            double tolerancia = 0.01;
-            Coordenadas nuevoCentro = Coordenadas.EncontrarEquidistancia(puntoInicio, puntoFin, centro, tolerancia);
-
-            tBoxEquidistancia.Text = $"{nuevoCentro.ObtenerCoordenadasDMS()}";
+            Coordenadas punto1 = new Coordenadas(tBoxPuntoInicio.Text);
+            Coordenadas punto2 = new Coordenadas(tBoxPuntoFin.Text);
+            double radio = double.Parse(tBoxRadio.Text);
+            Coordenadas centro1 = new Coordenadas();
+            Coordenadas centro2 = new Coordenadas();
+            (centro1, centro2) = punto1.EncontrarEquidistancia(punto2, radio);
+            tBoxEquidistancia1.Text = centro1.ObtenerCoordenadasDMS();
+            tBoxEquidistancia2.Text = centro2.ObtenerCoordenadasDMS();
         }
 
-        private void btnArco180_Click(object sender, EventArgs e)
+        private void btnArcoCentro2_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrEmpty(tBoxEquidistancia2.Text))
             {
-                Coordenadas puntoInicio = new Coordenadas(tBoxPuntoInicio.Text);
-                Coordenadas puntoFin = new Coordenadas(tBoxPuntoFin.Text);
-                bool sentidoHorario = comboBoxSentido.SelectedIndex == 0;
-                Coordenadas.Arco2puntos180Grados(puntoInicio, puntoFin, Convert.ToInt32(tBoxNumeroSegmentos.Text), Convert.ToInt32(tBoxNumeroEspacios.Text), sentidoHorario);
-                MessageBox.Show("Arco generado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Primero debe calcular la equidistancia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+            int numeroSegmentos = int.Parse(tBoxNumeroSegmentos.Text);
+            int numeroEspacios = int.Parse(tBoxNumeroEspacios.Text);
+            Coordenadas inicio = new Coordenadas(tBoxPuntoInicio.Text);
+            Coordenadas fin = new Coordenadas(tBoxPuntoFin.Text);
+            bool sentidoGiro = (comboBoxSentido.SelectedIndex == 0) ? true : false;
 
-        private void btnArcoRadio_Click(object sender, EventArgs e)
-        {
-            //llamar a CrearArcoConRadio
-            try
-            {
-                Coordenadas puntoInicio = new Coordenadas(tBoxPuntoInicio.Text);
-                Coordenadas puntoFin = new Coordenadas(tBoxPuntoFin.Text);
-                Coordenadas centro = new Coordenadas(tBoxCentro.Text);
-                double radio = Convert.ToDouble(tBoxRadio.Text);
-                bool sentidoHorario = comboBoxSentido.SelectedIndex == 0;
-
-                Coordenadas.CrearArco2PuntosCentro(puntoInicio, puntoFin, centro, Convert.ToInt32(tBoxNumeroSegmentos.Text),
-                    Convert.ToInt32(tBoxNumeroEspacios.Text), sentidoHorario);
-                MessageBox.Show("Arco generado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnLeerArchivoMarcas_Click(object sender, EventArgs e)
-        {
+            Coordenadas centro = new Coordenadas(tBoxEquidistancia2.Text);
+            Coordenadas.DibujarArco(inicio, fin, centro, sentidoGiro, numeroSegmentos, numeroEspacios);
+            MessageBox.Show("Arco generado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
-        private void btnBuscarMarcas_Click(object sender, EventArgs e)
+        private void btnArcoCentro1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (string.IsNullOrEmpty(tBoxEquidistancia1.Text))
             {
-                tBoxArchivoMarcas.Text = openFileDialog.FileName;
-                int encontrada = 0;
-                foreach (var line in File.ReadLines(openFileDialog.FileName))
-                {
-                    // Buscar coordenadas en el formato especificado en la línea
-                    var match = Regex.Match(line, @"(N|S)\d{3}\.\d{2}\.\d{2}\.\d{3} (E|W)\d{3}\.\d{2}\.\d{2}\.\d{3}");
-                    
-                    if (match.Success)
-                    {
-                        encontrada++;
-                        
-                        // Si encontramos la 1ra coordenada, la guardamos en tBoxPuntoInicio
-                        if (encontrada == 1)
-                        {
-                            tBoxPuntoFin.Text = match.Value;
-                        }
-                        // Si encontramos la 2da coordenada, la guardamos en tBoxPuntoFin
-                        else if (encontrada == 2)
-                        {
-                            tBoxPuntoInicio.Text = match.Value;
-                        }
-                        // Si encontramos la 3ra coordenada, la guardamos en tBoxCentro
-                        else if (encontrada == 3)
-                        {
-                            tBoxCentro.Text = match.Value;
-                            break; // Salir del bucle una vez que se han encontrado las tres coordenadas
-                        }
-                    }
-                }
+                MessageBox.Show("Primero debe calcular la equidistancia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int numeroSegmentos = int.Parse(tBoxNumeroSegmentos.Text);
+            int numeroEspacios = int.Parse(tBoxNumeroEspacios.Text);
 
+            Coordenadas inicio = new Coordenadas(tBoxPuntoInicio.Text);
+            Coordenadas fin = new Coordenadas(tBoxPuntoFin.Text);
+            bool sentidoGiro = (comboBoxSentido.SelectedIndex == 0) ? true : false;
+            Coordenadas centro = new Coordenadas(tBoxEquidistancia1.Text);
+            Coordenadas.DibujarArco(inicio, fin, centro, sentidoGiro, numeroSegmentos, numeroEspacios);
+            MessageBox.Show("Arco generado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnBusquedaInicio_Click(object sender, EventArgs e)
+        {
+            BuscarPunto formBuscar = new BuscarPunto();
+            if (formBuscar.ShowDialog() == DialogResult.OK)
+            {
+                tBoxPuntoInicio.Text = formBuscar.CoordenadasSeleccionadas;
+            }
+        }
+
+        private void btnBusquedaFinal_Click(object sender, EventArgs e)
+        {
+            BuscarPunto formBuscar = new BuscarPunto();
+            if (formBuscar.ShowDialog() == DialogResult.OK)
+            {
+                tBoxPuntoFin.Text = formBuscar.CoordenadasSeleccionadas;
+            }
+        }
+
+        private void btnBusquedaCentro_Click(object sender, EventArgs e)
+        {
+            BuscarPunto formBuscar = new BuscarPunto();
+            if (formBuscar.ShowDialog() == DialogResult.OK)
+            {
+                tBoxCentro.Text = formBuscar.CoordenadasSeleccionadas;
             }
         }
     }

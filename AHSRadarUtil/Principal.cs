@@ -48,5 +48,37 @@ namespace AHSRadarUtil
             Ivao ivao = new Ivao();
             ivao.ShowDialog();
         }
+
+
+        private void btnCopiarArchivos_Click(object sender, EventArgs e)
+        {
+            CopiarArchivo copiarArchivo = new CopiarArchivo();
+            copiarArchivo.ShowDialog();
+        }
+
+        private void BtnFixes_Click(object sender, EventArgs e)
+        {
+            Fixes fixes = new Fixes();
+            fixes.ShowDialog();
+        }
+
+
+        private void btnEspera_Click(object sender, EventArgs e)
+        {
+            Espera espera = new Espera();
+            espera.ShowDialog();
+        }
+
+        private void btnGoAround_Click(object sender, EventArgs e)
+        {
+            GoAround goAround = new GoAround();
+            goAround.ShowDialog();
+        }
+
+        private void btnAirac_Click(object sender, EventArgs e)
+        {
+            Airac airac = new Airac();
+            airac.ShowDialog();
+        }
     }
 }
