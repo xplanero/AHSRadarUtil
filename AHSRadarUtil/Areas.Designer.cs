@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Areas));
             label1 = new Label();
             btnR_D_P = new Button();
             btnCargarArchivo = new Button();
@@ -88,6 +89,7 @@
             Controls.Add(btnCargarArchivo);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             HelpButton = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Areas";

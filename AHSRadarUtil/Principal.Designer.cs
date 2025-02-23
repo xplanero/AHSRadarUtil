@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             btnCirculo = new Button();
             btnSalir = new Button();
             btnEncontrar = new Button();
@@ -182,6 +183,7 @@
             Controls.Add(btnEncontrar);
             Controls.Add(btnSalir);
             Controls.Add(btnCirculo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Principal";
             Text = "UTILIDADES RADAR AIRHISPANIA";
             ResumeLayout(false);

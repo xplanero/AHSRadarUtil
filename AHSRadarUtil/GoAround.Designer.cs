@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoAround));
             tBoxDestino = new TextBox();
             tBoxOrigen = new TextBox();
             btnMenu = new Button();
@@ -38,26 +39,23 @@
             // 
             // tBoxDestino
             // 
-            tBoxDestino.Location = new Point(89, 43);
-            tBoxDestino.Margin = new Padding(2);
+            tBoxDestino.Location = new Point(127, 72);
             tBoxDestino.Name = "tBoxDestino";
-            tBoxDestino.Size = new Size(689, 23);
+            tBoxDestino.Size = new Size(983, 31);
             tBoxDestino.TabIndex = 17;
             // 
             // tBoxOrigen
             // 
-            tBoxOrigen.Location = new Point(89, 20);
-            tBoxOrigen.Margin = new Padding(2);
+            tBoxOrigen.Location = new Point(127, 33);
             tBoxOrigen.Name = "tBoxOrigen";
-            tBoxOrigen.Size = new Size(689, 23);
+            tBoxOrigen.Size = new Size(983, 31);
             tBoxOrigen.TabIndex = 16;
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(698, 72);
-            btnMenu.Margin = new Padding(2);
+            btnMenu.Location = new Point(997, 120);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(78, 20);
+            btnMenu.Size = new Size(111, 33);
             btnMenu.TabIndex = 15;
             btnMenu.Text = "Menú";
             btnMenu.UseVisualStyleBackColor = true;
@@ -65,10 +63,9 @@
             // 
             // btnProcesar
             // 
-            btnProcesar.Location = new Point(6, 72);
-            btnProcesar.Margin = new Padding(2);
+            btnProcesar.Location = new Point(9, 120);
             btnProcesar.Name = "btnProcesar";
-            btnProcesar.Size = new Size(78, 20);
+            btnProcesar.Size = new Size(111, 33);
             btnProcesar.TabIndex = 14;
             btnProcesar.Text = "Procesar";
             btnProcesar.UseVisualStyleBackColor = true;
@@ -76,10 +73,9 @@
             // 
             // btnDestino
             // 
-            btnDestino.Location = new Point(6, 42);
-            btnDestino.Margin = new Padding(2);
+            btnDestino.Location = new Point(9, 70);
             btnDestino.Name = "btnDestino";
-            btnDestino.Size = new Size(78, 20);
+            btnDestino.Size = new Size(111, 33);
             btnDestino.TabIndex = 13;
             btnDestino.Text = "Destino";
             btnDestino.UseVisualStyleBackColor = true;
@@ -87,10 +83,9 @@
             // 
             // btnOrigen
             // 
-            btnOrigen.Location = new Point(6, 18);
-            btnOrigen.Margin = new Padding(2);
+            btnOrigen.Location = new Point(9, 30);
             btnOrigen.Name = "btnOrigen";
-            btnOrigen.Size = new Size(78, 20);
+            btnOrigen.Size = new Size(111, 33);
             btnOrigen.TabIndex = 12;
             btnOrigen.Text = "Origen";
             btnOrigen.UseVisualStyleBackColor = true;
@@ -98,15 +93,17 @@
             // 
             // GoAround
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 111);
+            ClientSize = new Size(1143, 185);
             Controls.Add(tBoxDestino);
             Controls.Add(tBoxOrigen);
             Controls.Add(btnMenu);
             Controls.Add(btnProcesar);
             Controls.Add(btnDestino);
             Controls.Add(btnOrigen);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "GoAround";
             Text = "GoAround";
             ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fixes));
             btnMwnu = new Button();
             lblCoordAIP = new Label();
             btnCoordAIP = new Button();
@@ -38,10 +39,9 @@
             // 
             // btnMwnu
             // 
-            btnMwnu.Location = new Point(916, 228);
-            btnMwnu.Margin = new Padding(4, 4, 4, 4);
+            btnMwnu.Location = new Point(611, 154);
             btnMwnu.Name = "btnMwnu";
-            btnMwnu.Size = new Size(168, 50);
+            btnMwnu.Size = new Size(112, 34);
             btnMwnu.TabIndex = 11;
             btnMwnu.Text = "MENÚ";
             btnMwnu.UseVisualStyleBackColor = true;
@@ -50,19 +50,17 @@
             // lblCoordAIP
             // 
             lblCoordAIP.AutoSize = true;
-            lblCoordAIP.Location = new Point(260, 84);
-            lblCoordAIP.Margin = new Padding(4, 0, 4, 0);
+            lblCoordAIP.Location = new Point(173, 57);
             lblCoordAIP.Name = "lblCoordAIP";
-            lblCoordAIP.Size = new Size(355, 37);
+            lblCoordAIP.Size = new Size(241, 25);
             lblCoordAIP.TabIndex = 10;
             lblCoordAIP.Text = "Archivo de coordenadas AIP.";
             // 
             // btnCoordAIP
             // 
-            btnCoordAIP.Location = new Point(18, 77);
-            btnCoordAIP.Margin = new Padding(4, 4, 4, 4);
+            btnCoordAIP.Location = new Point(12, 52);
             btnCoordAIP.Name = "btnCoordAIP";
-            btnCoordAIP.Size = new Size(207, 50);
+            btnCoordAIP.Size = new Size(138, 34);
             btnCoordAIP.TabIndex = 8;
             btnCoordAIP.Text = "Coord. AIP";
             btnCoordAIP.UseVisualStyleBackColor = true;
@@ -70,10 +68,9 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(18, 135);
-            btnActualizar.Margin = new Padding(4, 4, 4, 4);
+            btnActualizar.Location = new Point(12, 91);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(207, 50);
+            btnActualizar.Size = new Size(138, 34);
             btnActualizar.TabIndex = 7;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
@@ -81,10 +78,9 @@
             // 
             // btnCoordAHS
             // 
-            btnCoordAHS.Location = new Point(18, 18);
-            btnCoordAHS.Margin = new Padding(4, 4, 4, 4);
+            btnCoordAHS.Location = new Point(12, 12);
             btnCoordAHS.Name = "btnCoordAHS";
-            btnCoordAHS.Size = new Size(207, 50);
+            btnCoordAHS.Size = new Size(138, 34);
             btnCoordAHS.TabIndex = 6;
             btnCoordAHS.Text = "Coord. AHS";
             btnCoordAHS.UseVisualStyleBackColor = true;
@@ -93,25 +89,24 @@
             // lblCoordAHS
             // 
             lblCoordAHS.AutoSize = true;
-            lblCoordAHS.Location = new Point(260, 25);
-            lblCoordAHS.Margin = new Padding(4, 0, 4, 0);
+            lblCoordAHS.Location = new Point(173, 17);
             lblCoordAHS.Name = "lblCoordAHS";
-            lblCoordAHS.Size = new Size(366, 37);
+            lblCoordAHS.Size = new Size(249, 25);
             lblCoordAHS.TabIndex = 12;
             lblCoordAHS.Text = "Archivo de coordenadas AHS.";
             // 
             // Fixes
             // 
-            AutoScaleDimensions = new SizeF(15F, 37F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1102, 296);
+            ClientSize = new Size(735, 200);
             Controls.Add(lblCoordAHS);
             Controls.Add(btnMwnu);
             Controls.Add(lblCoordAIP);
             Controls.Add(btnCoordAIP);
             Controls.Add(btnActualizar);
             Controls.Add(btnCoordAHS);
-            Margin = new Padding(4, 4, 4, 4);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Fixes";
             Text = "Fixes";
             Load += Fixes_Load;

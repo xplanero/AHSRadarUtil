@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Circulo));
             lblCentro = new Label();
             lblColor = new Label();
             tBoxColor = new TextBox();
@@ -176,6 +177,7 @@
             Controls.Add(tBoxColor);
             Controls.Add(lblColor);
             Controls.Add(lblCentro);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(1, 2, 1, 2);
             Name = "Circulo";
             Text = "Construcción de circulos";

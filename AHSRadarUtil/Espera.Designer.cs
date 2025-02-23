@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Espera));
             tBoxFijo = new TextBox();
             tBoxAncho = new TextBox();
             tBoxLargo = new TextBox();
@@ -54,7 +55,7 @@
             // tBoxAncho
             // 
             tBoxAncho.Location = new Point(152, 96);
-            tBoxAncho.Margin = new Padding(2, 2, 2, 2);
+            tBoxAncho.Margin = new Padding(2);
             tBoxAncho.Name = "tBoxAncho";
             tBoxAncho.Size = new Size(54, 31);
             tBoxAncho.TabIndex = 27;
@@ -64,7 +65,7 @@
             // tBoxLargo
             // 
             tBoxLargo.Location = new Point(152, 130);
-            tBoxLargo.Margin = new Padding(2, 2, 2, 2);
+            tBoxLargo.Margin = new Padding(2);
             tBoxLargo.Name = "tBoxLargo";
             tBoxLargo.Size = new Size(54, 31);
             tBoxLargo.TabIndex = 28;
@@ -74,7 +75,7 @@
             // tBoxRumboInbound
             // 
             tBoxRumboInbound.Location = new Point(152, 62);
-            tBoxRumboInbound.Margin = new Padding(2, 2, 2, 2);
+            tBoxRumboInbound.Margin = new Padding(2);
             tBoxRumboInbound.Name = "tBoxRumboInbound";
             tBoxRumboInbound.Size = new Size(54, 31);
             tBoxRumboInbound.TabIndex = 29;
@@ -188,7 +189,8 @@
             Controls.Add(tBoxLargo);
             Controls.Add(tBoxAncho);
             Controls.Add(tBoxFijo);
-            Margin = new Padding(2, 2, 2, 2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "Espera";
             Text = "Espera";
             ResumeLayout(false);

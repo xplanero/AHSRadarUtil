@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CopiarArchivo));
             btnMwnu = new Button();
             lstCarpetas = new ListBox();
             lblCarpetaDestino = new Label();
@@ -117,6 +118,7 @@
             Controls.Add(lblCarpetaDestino);
             Controls.Add(lstCarpetas);
             Controls.Add(btnMwnu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CopiarArchivo";
             Text = "CopiarArchivo";
             ResumeLayout(false);

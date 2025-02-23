@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Arco));
             btnMenu = new Button();
             lblRadio = new Label();
             lblInicio = new Label();
@@ -342,6 +343,7 @@
             Controls.Add(lblInicio);
             Controls.Add(lblRadio);
             Controls.Add(btnMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Arco";
             Text = "Construccion de arcos.";
             ResumeLayout(false);

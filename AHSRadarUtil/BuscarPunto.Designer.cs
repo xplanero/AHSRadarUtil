@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarPunto));
             tBoxBusqueda = new TextBox();
             listBoxResultados = new ListBox();
             SuspendLayout();
@@ -58,6 +59,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(listBoxResultados);
             Controls.Add(tBoxBusqueda);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "BuscarPunto";
             Text = "BuscarPunto";
             ResumeLayout(false);

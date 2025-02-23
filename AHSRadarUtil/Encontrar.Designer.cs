@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Encontrar));
             lblTexto1 = new Label();
             tBoxArchivoPoligono = new TextBox();
             btnRutaArchPol = new Button();
@@ -167,6 +168,7 @@
             Controls.Add(btnRutaArchPol);
             Controls.Add(tBoxArchivoPoligono);
             Controls.Add(lblTexto1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "Encontrar";
             Text = "Encontrar líneas.";

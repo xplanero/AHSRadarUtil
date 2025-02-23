@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Airac));
             tBoxFijos = new TextBox();
             tBoxRadioAyudas = new TextBox();
             btnBuscarFix = new Button();
@@ -39,26 +40,23 @@
             // 
             // tBoxFijos
             // 
-            tBoxFijos.Location = new Point(15, 19);
-            tBoxFijos.Margin = new Padding(2);
+            tBoxFijos.Location = new Point(21, 32);
             tBoxFijos.Name = "tBoxFijos";
-            tBoxFijos.Size = new Size(348, 23);
+            tBoxFijos.Size = new Size(495, 31);
             tBoxFijos.TabIndex = 0;
             // 
             // tBoxRadioAyudas
             // 
-            tBoxRadioAyudas.Location = new Point(15, 41);
-            tBoxRadioAyudas.Margin = new Padding(2);
+            tBoxRadioAyudas.Location = new Point(21, 68);
             tBoxRadioAyudas.Name = "tBoxRadioAyudas";
-            tBoxRadioAyudas.Size = new Size(348, 23);
+            tBoxRadioAyudas.Size = new Size(495, 31);
             tBoxRadioAyudas.TabIndex = 1;
             // 
             // btnBuscarFix
             // 
-            btnBuscarFix.Location = new Point(367, 19);
-            btnBuscarFix.Margin = new Padding(2);
+            btnBuscarFix.Location = new Point(524, 32);
             btnBuscarFix.Name = "btnBuscarFix";
-            btnBuscarFix.Size = new Size(78, 20);
+            btnBuscarFix.Size = new Size(111, 33);
             btnBuscarFix.TabIndex = 2;
             btnBuscarFix.Text = "Buscar";
             btnBuscarFix.UseVisualStyleBackColor = true;
@@ -66,10 +64,9 @@
             // 
             // btnVorNdb
             // 
-            btnVorNdb.Location = new Point(367, 44);
-            btnVorNdb.Margin = new Padding(2);
+            btnVorNdb.Location = new Point(524, 73);
             btnVorNdb.Name = "btnVorNdb";
-            btnVorNdb.Size = new Size(78, 20);
+            btnVorNdb.Size = new Size(111, 33);
             btnVorNdb.TabIndex = 3;
             btnVorNdb.Text = "Buscar";
             btnVorNdb.UseVisualStyleBackColor = true;
@@ -78,18 +75,18 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 67);
-            dataGridView1.Margin = new Padding(2);
+            dataGridView1.Location = new Point(11, 112);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(543, 190);
+            dataGridView1.Size = new Size(776, 317);
             dataGridView1.TabIndex = 4;
             // 
             // btnGenerar
             // 
-            btnGenerar.Location = new Point(459, 28);
+            btnGenerar.Location = new Point(656, 47);
+            btnGenerar.Margin = new Padding(4, 5, 4, 5);
             btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(75, 23);
+            btnGenerar.Size = new Size(107, 38);
             btnGenerar.TabIndex = 5;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = true;
@@ -97,16 +94,16 @@
             // 
             // Airac
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(800, 450);
             Controls.Add(btnGenerar);
             Controls.Add(dataGridView1);
             Controls.Add(btnVorNdb);
             Controls.Add(btnBuscarFix);
             Controls.Add(tBoxRadioAyudas);
             Controls.Add(tBoxFijos);
-            Margin = new Padding(2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Airac";
             Text = "Airac";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
