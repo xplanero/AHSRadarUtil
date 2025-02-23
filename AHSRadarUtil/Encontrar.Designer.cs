@@ -44,24 +44,27 @@
             // lblTexto1
             // 
             lblTexto1.AutoSize = true;
-            lblTexto1.Location = new Point(34, 30);
+            lblTexto1.Location = new Point(49, 50);
+            lblTexto1.Margin = new Padding(4, 0, 4, 0);
             lblTexto1.Name = "lblTexto1";
-            lblTexto1.Size = new Size(115, 15);
+            lblTexto1.Size = new Size(173, 25);
             lblTexto1.TabIndex = 0;
             lblTexto1.Text = "Archivo de Polígono";
             // 
             // tBoxArchivoPoligono
             // 
-            tBoxArchivoPoligono.Location = new Point(34, 48);
+            tBoxArchivoPoligono.Location = new Point(49, 80);
+            tBoxArchivoPoligono.Margin = new Padding(4, 5, 4, 5);
             tBoxArchivoPoligono.Name = "tBoxArchivoPoligono";
-            tBoxArchivoPoligono.Size = new Size(673, 23);
+            tBoxArchivoPoligono.Size = new Size(960, 31);
             tBoxArchivoPoligono.TabIndex = 1;
             // 
             // btnRutaArchPol
             // 
-            btnRutaArchPol.Location = new Point(713, 48);
+            btnRutaArchPol.Location = new Point(1019, 80);
+            btnRutaArchPol.Margin = new Padding(4, 5, 4, 5);
             btnRutaArchPol.Name = "btnRutaArchPol";
-            btnRutaArchPol.Size = new Size(75, 23);
+            btnRutaArchPol.Size = new Size(107, 38);
             btnRutaArchPol.TabIndex = 2;
             btnRutaArchPol.Text = "Buscar";
             btnRutaArchPol.UseVisualStyleBackColor = true;
@@ -70,17 +73,19 @@
             // lblTexto2
             // 
             lblTexto2.AutoSize = true;
-            lblTexto2.Location = new Point(34, 84);
+            lblTexto2.Location = new Point(49, 140);
+            lblTexto2.Margin = new Padding(4, 0, 4, 0);
             lblTexto2.Name = "lblTexto2";
-            lblTexto2.Size = new Size(100, 15);
+            lblTexto2.Size = new Size(152, 25);
             lblTexto2.TabIndex = 3;
             lblTexto2.Text = "Archivo de Rádar.";
             // 
             // btnRutaArchRadar
             // 
-            btnRutaArchRadar.Location = new Point(713, 102);
+            btnRutaArchRadar.Location = new Point(1019, 170);
+            btnRutaArchRadar.Margin = new Padding(4, 5, 4, 5);
             btnRutaArchRadar.Name = "btnRutaArchRadar";
-            btnRutaArchRadar.Size = new Size(75, 23);
+            btnRutaArchRadar.Size = new Size(107, 38);
             btnRutaArchRadar.TabIndex = 5;
             btnRutaArchRadar.Text = "Buscar";
             btnRutaArchRadar.UseVisualStyleBackColor = true;
@@ -88,16 +93,18 @@
             // 
             // tBoxArchivoRadar
             // 
-            tBoxArchivoRadar.Location = new Point(34, 102);
+            tBoxArchivoRadar.Location = new Point(49, 170);
+            tBoxArchivoRadar.Margin = new Padding(4, 5, 4, 5);
             tBoxArchivoRadar.Name = "tBoxArchivoRadar";
-            tBoxArchivoRadar.Size = new Size(673, 23);
+            tBoxArchivoRadar.Size = new Size(960, 31);
             tBoxArchivoRadar.TabIndex = 4;
             // 
             // btnRutaSalida
             // 
-            btnRutaSalida.Location = new Point(713, 159);
+            btnRutaSalida.Location = new Point(1019, 265);
+            btnRutaSalida.Margin = new Padding(4, 5, 4, 5);
             btnRutaSalida.Name = "btnRutaSalida";
-            btnRutaSalida.Size = new Size(75, 23);
+            btnRutaSalida.Size = new Size(107, 38);
             btnRutaSalida.TabIndex = 8;
             btnRutaSalida.Text = "Buscar";
             btnRutaSalida.UseVisualStyleBackColor = true;
@@ -105,25 +112,28 @@
             // 
             // tBoxArchivoSalida
             // 
-            tBoxArchivoSalida.Location = new Point(34, 159);
+            tBoxArchivoSalida.Location = new Point(49, 265);
+            tBoxArchivoSalida.Margin = new Padding(4, 5, 4, 5);
             tBoxArchivoSalida.Name = "tBoxArchivoSalida";
-            tBoxArchivoSalida.Size = new Size(673, 23);
+            tBoxArchivoSalida.Size = new Size(960, 31);
             tBoxArchivoSalida.TabIndex = 7;
             // 
             // lblTexto3
             // 
             lblTexto3.AutoSize = true;
-            lblTexto3.Location = new Point(34, 141);
+            lblTexto3.Location = new Point(49, 235);
+            lblTexto3.Margin = new Padding(4, 0, 4, 0);
             lblTexto3.Name = "lblTexto3";
-            lblTexto3.Size = new Size(112, 15);
+            lblTexto3.Size = new Size(171, 25);
             lblTexto3.TabIndex = 6;
             lblTexto3.Text = "Directorio de Salida.";
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(668, 402);
+            btnMenu.Location = new Point(954, 670);
+            btnMenu.Margin = new Padding(4, 5, 4, 5);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(75, 23);
+            btnMenu.Size = new Size(107, 38);
             btnMenu.TabIndex = 9;
             btnMenu.Text = "Menú";
             btnMenu.UseMnemonic = false;
@@ -132,9 +142,10 @@
             // 
             // btnGenerar
             // 
-            btnGenerar.Location = new Point(38, 218);
+            btnGenerar.Location = new Point(54, 363);
+            btnGenerar.Margin = new Padding(4, 5, 4, 5);
             btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(75, 23);
+            btnGenerar.Size = new Size(107, 38);
             btnGenerar.TabIndex = 10;
             btnGenerar.Text = "Generar.";
             btnGenerar.UseVisualStyleBackColor = true;
@@ -142,9 +153,9 @@
             // 
             // Encontrar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
             Controls.Add(btnGenerar);
             Controls.Add(btnMenu);
             Controls.Add(btnRutaSalida);
@@ -156,8 +167,10 @@
             Controls.Add(btnRutaArchPol);
             Controls.Add(tBoxArchivoPoligono);
             Controls.Add(lblTexto1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Encontrar";
             Text = "Encontrar líneas.";
+            HelpButtonClicked += Encontrar_HelpButtonClicked;
             ResumeLayout(false);
             PerformLayout();
         }

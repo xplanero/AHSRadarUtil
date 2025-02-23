@@ -10,6 +10,10 @@ namespace AHSRadarUtil
         {
             InitializeComponent();
             LoadPaths();
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -163,6 +167,13 @@ namespace AHSRadarUtil
                 j = i;
             }
             return isInside;
+        }
+
+        private void Encontrar_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBox.Show("Con el programa de Rádar de AHS elimina las marcas anteriores. Crea las marcas de un polígono" +
+                " imaginario que rodea la zona de los elementos que quieres localizar" +
+                " en el archivo de radar y salvalo. Al menos necesitaras tres puntos.", "Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

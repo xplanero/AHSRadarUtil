@@ -11,6 +11,10 @@ namespace AHSRadarUtil
         {
             InitializeComponent();
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void btnCargarArchivo_Click(object sender, EventArgs e)
@@ -53,9 +57,10 @@ namespace AHSRadarUtil
             }
         }
 
-        private void btnAyuda_Click(object sender, EventArgs e)
+               
+        private void Areas_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            MessageBox.Show("Descargue el archivo XML con información de espacios aéreos. Esta se encuentra en CONJUNTO DE DATOS ---> CONJUNTO DE DATOS SOBRE EL ESPACIO AEREO.");
         }
     }
     public class AirspaceProcessor
