@@ -83,7 +83,7 @@ namespace AHSRadarUtil
             string outputFilePath = tBoxArchivoSalida.Text;
             int encontrados = 0;
             int leidas = 0;
-
+            int indice = 0;
             // Leer las coordenadas del polígono
             List<Coordinate> polygonCoordinates = ReadCoordinatesFromFile(polygonFilePath);
             List<string> linesWithinPolygon = new List<string>();
@@ -91,6 +91,8 @@ namespace AHSRadarUtil
             // Leer y verificar cada línea de coordenadas
             foreach (var line in File.ReadLines(coordinatesFilePath))
             {
+
+                indice = indice + 1;
                 // Buscar coordenadas en el formato especificado en la línea
                 var match = Regex.Match(line, @"(N|S)\d{3}\.\d{2}\.\d{2}\.\d{3} (E|W)\d{3}\.\d{2}\.\d{2}\.\d{3}");
                 if (match.Success)
@@ -103,7 +105,8 @@ namespace AHSRadarUtil
                     {
                         // Añadir la línea a la lista de resultados si está dentro del polígono
                         encontrados = encontrados + 1;
-                        linesWithinPolygon.Add(line);
+                        var lineaSalida = $"{indice} {line} ";
+                        linesWithinPolygon.Add(lineaSalida);
                     }
                 }
             }
