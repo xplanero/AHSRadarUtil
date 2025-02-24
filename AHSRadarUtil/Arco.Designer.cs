@@ -56,6 +56,7 @@
             btnBusquedaInicio = new Button();
             btnBusquedaFinal = new Button();
             btnBusquedaCentro = new Button();
+            btnDibujar = new Button();
             SuspendLayout();
             // 
             // btnMenu
@@ -311,11 +312,22 @@
             btnBusquedaCentro.UseVisualStyleBackColor = true;
             btnBusquedaCentro.Click += btnBusquedaCentro_Click;
             // 
+            // btnDibujar
+            // 
+            btnDibujar.Location = new Point(753, 99);
+            btnDibujar.Name = "btnDibujar";
+            btnDibujar.Size = new Size(111, 33);
+            btnDibujar.TabIndex = 55;
+            btnDibujar.Text = "Dibujar";
+            btnDibujar.UseVisualStyleBackColor = true;
+            btnDibujar.Click += btnDibujar_Click;
+            // 
             // Arco
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1034, 548);
+            Controls.Add(btnDibujar);
             Controls.Add(btnBusquedaCentro);
             Controls.Add(btnBusquedaFinal);
             Controls.Add(btnBusquedaInicio);
@@ -379,5 +391,6 @@
         private Button btnBusquedaInicio;
         private Button btnBusquedaFinal;
         private Button btnBusquedaCentro;
+        private Button btnDibujar;
     }
 }

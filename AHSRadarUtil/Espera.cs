@@ -35,27 +35,15 @@
                 tBoxFijo.Text = formBuscar.CoordenadasSeleccionadas;
             }
         }
-        private void CargarPuntos()
+        
+
+        private void btnDibujar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string[] lineas = File.ReadAllLines("puntosSignificativos.csv").Skip(1).ToArray();
-                foreach (string linea in lineas)
-                {
-                    
-                    string[] columnas = linea.Split(';');
-                    if (columnas.Length > 3)
-                    {
-                        string punto = columnas[0].Trim();
-                        string coordenadas = columnas[3].Trim();
-                        puntosDict[punto] = coordenadas;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los puntos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //Abrir el formulario de dibujo
+            DibujarSegmentos formDibujar = new DibujarSegmentos();
+            formDibujar.ShowDialog();
+
+
         }
     }
 }

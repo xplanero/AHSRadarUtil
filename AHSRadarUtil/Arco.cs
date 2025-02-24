@@ -115,5 +115,13 @@
                 tBoxCentro.Text = formBuscar.CoordenadasSeleccionadas;
             }
         }
+
+        private void btnDibujar_Click(object sender, EventArgs e)
+        {
+            //Abrir el formulario de dibujo
+            DibujarSegmentos formDibujar = new DibujarSegmentos();
+            formDibujar.ShowDialog();
+
+        }
     }
 }

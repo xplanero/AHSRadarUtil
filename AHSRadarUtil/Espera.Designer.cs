@@ -42,6 +42,7 @@
             lblSentido = new Label();
             btnGenerar = new Button();
             btnBusqueda = new Button();
+            btnDibujar = new Button();
             SuspendLayout();
             // 
             // tBoxFijo
@@ -171,11 +172,22 @@
             btnBusqueda.UseVisualStyleBackColor = true;
             btnBusqueda.Click += btnBusqueda_Click;
             // 
+            // btnDibujar
+            // 
+            btnDibujar.Location = new Point(279, 165);
+            btnDibujar.Name = "btnDibujar";
+            btnDibujar.Size = new Size(111, 33);
+            btnDibujar.TabIndex = 39;
+            btnDibujar.Text = "Dibujar";
+            btnDibujar.UseVisualStyleBackColor = true;
+            btnDibujar.Click += btnDibujar_Click;
+            // 
             // Espera
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(552, 289);
+            Controls.Add(btnDibujar);
             Controls.Add(btnBusqueda);
             Controls.Add(btnGenerar);
             Controls.Add(lblSentido);
@@ -212,5 +224,6 @@
         private Label lblSentido;
         private Button btnGenerar;
         private Button btnBusqueda;
+        private Button btnDibujar;
     }
 }
