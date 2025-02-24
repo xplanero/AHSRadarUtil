@@ -41,11 +41,13 @@
             btnEspera = new Button();
             btnGoAround = new Button();
             btnAirac = new Button();
+            pictureBoxLogo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
             // btnCirculo
             // 
-            btnCirculo.Location = new Point(24, 18);
+            btnCirculo.Location = new Point(33, 18);
             btnCirculo.Name = "btnCirculo";
             btnCirculo.Size = new Size(111, 38);
             btnCirculo.TabIndex = 0;
@@ -55,18 +57,19 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(650, 382);
+            btnSalir.BackColor = SystemColors.GradientActiveCaption;
+            btnSalir.Location = new Point(657, 133);
             btnSalir.Margin = new Padding(1, 2, 1, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(113, 35);
+            btnSalir.Size = new Size(111, 38);
             btnSalir.TabIndex = 1;
             btnSalir.Text = "SALIR";
-            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
             // btnEncontrar
             // 
-            btnEncontrar.Location = new Point(171, 73);
+            btnEncontrar.Location = new Point(189, 77);
             btnEncontrar.Margin = new Padding(4, 5, 4, 5);
             btnEncontrar.Name = "btnEncontrar";
             btnEncontrar.Size = new Size(111, 38);
@@ -77,7 +80,7 @@
             // 
             // btnFileInt
             // 
-            btnFileInt.Location = new Point(171, 18);
+            btnFileInt.Location = new Point(189, 18);
             btnFileInt.Name = "btnFileInt";
             btnFileInt.Size = new Size(111, 38);
             btnFileInt.TabIndex = 3;
@@ -87,9 +90,9 @@
             // 
             // btnArco
             // 
-            btnArco.Location = new Point(24, 77);
+            btnArco.Location = new Point(33, 77);
             btnArco.Name = "btnArco";
-            btnArco.Size = new Size(111, 35);
+            btnArco.Size = new Size(111, 38);
             btnArco.TabIndex = 4;
             btnArco.Text = "Arco";
             btnArco.UseVisualStyleBackColor = true;
@@ -97,9 +100,9 @@
             // 
             // btnAreas
             // 
-            btnAreas.Location = new Point(320, 22);
+            btnAreas.Location = new Point(345, 18);
             btnAreas.Name = "btnAreas";
-            btnAreas.Size = new Size(111, 33);
+            btnAreas.Size = new Size(111, 38);
             btnAreas.TabIndex = 5;
             btnAreas.Text = "Areas";
             btnAreas.UseVisualStyleBackColor = true;
@@ -107,9 +110,9 @@
             // 
             // btnDeIvao
             // 
-            btnDeIvao.Location = new Point(320, 77);
+            btnDeIvao.Location = new Point(345, 77);
             btnDeIvao.Name = "btnDeIvao";
-            btnDeIvao.Size = new Size(111, 33);
+            btnDeIvao.Size = new Size(111, 38);
             btnDeIvao.TabIndex = 6;
             btnDeIvao.Text = "IVAO";
             btnDeIvao.UseVisualStyleBackColor = true;
@@ -117,9 +120,9 @@
             // 
             // btnCopiarArchivos
             // 
-            btnCopiarArchivos.Location = new Point(650, 22);
+            btnCopiarArchivos.Location = new Point(657, 18);
             btnCopiarArchivos.Name = "btnCopiarArchivos";
-            btnCopiarArchivos.Size = new Size(111, 33);
+            btnCopiarArchivos.Size = new Size(111, 38);
             btnCopiarArchivos.TabIndex = 9;
             btnCopiarArchivos.Text = "Copiar  AR";
             btnCopiarArchivos.UseVisualStyleBackColor = true;
@@ -127,9 +130,9 @@
             // 
             // BtnFixes
             // 
-            BtnFixes.Location = new Point(650, 73);
+            BtnFixes.Location = new Point(657, 77);
             BtnFixes.Name = "BtnFixes";
-            BtnFixes.Size = new Size(111, 33);
+            BtnFixes.Size = new Size(111, 38);
             BtnFixes.TabIndex = 10;
             BtnFixes.Text = "Fixes";
             BtnFixes.UseVisualStyleBackColor = true;
@@ -137,10 +140,10 @@
             // 
             // btnEspera
             // 
-            btnEspera.Location = new Point(486, 76);
+            btnEspera.Location = new Point(501, 77);
             btnEspera.Margin = new Padding(1, 2, 1, 2);
             btnEspera.Name = "btnEspera";
-            btnEspera.Size = new Size(109, 33);
+            btnEspera.Size = new Size(111, 38);
             btnEspera.TabIndex = 12;
             btnEspera.Text = "Esperas";
             btnEspera.UseVisualStyleBackColor = true;
@@ -148,9 +151,9 @@
             // 
             // btnGoAround
             // 
-            btnGoAround.Location = new Point(486, 23);
+            btnGoAround.Location = new Point(501, 18);
             btnGoAround.Name = "btnGoAround";
-            btnGoAround.Size = new Size(111, 33);
+            btnGoAround.Size = new Size(111, 38);
             btnGoAround.TabIndex = 13;
             btnGoAround.Text = "Go Around";
             btnGoAround.UseVisualStyleBackColor = true;
@@ -158,19 +161,30 @@
             // 
             // btnAirac
             // 
-            btnAirac.Location = new Point(24, 133);
+            btnAirac.Location = new Point(33, 133);
             btnAirac.Name = "btnAirac";
-            btnAirac.Size = new Size(112, 34);
+            btnAirac.Size = new Size(111, 38);
             btnAirac.TabIndex = 14;
             btnAirac.Text = "Airac";
             btnAirac.UseVisualStyleBackColor = true;
             btnAirac.Click += btnAirac_Click;
             // 
+            // pictureBoxLogo
+            // 
+            pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
+            pictureBoxLogo.Location = new Point(262, 133);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(244, 51);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogo.TabIndex = 15;
+            pictureBoxLogo.TabStop = false;
+            // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 196);
+            Controls.Add(pictureBoxLogo);
             Controls.Add(btnAirac);
             Controls.Add(btnGoAround);
             Controls.Add(btnEspera);
@@ -186,6 +200,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Principal";
             Text = "UTILIDADES RADAR AIRHISPANIA";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -203,5 +218,6 @@
         private Button btnEspera;
         private Button btnGoAround;
         private Button btnAirac;
+        private PictureBox pictureBoxLogo;
     }
 }
