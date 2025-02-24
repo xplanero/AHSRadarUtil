@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>bin\Debug\net8.0-windows\torre-de-control.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\torre-de-control.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="bin\Debug\net8.0-windows\torre-de-control.ico" />
+    <Content Include="Resources\torre-de-control.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +31,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net8.0-windows\" />
   </ItemGroup>
 
 </Project>
