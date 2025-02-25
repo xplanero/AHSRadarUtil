@@ -5,6 +5,7 @@ namespace AHSRadarUtil
         public Principal()
         {
             InitializeComponent();
+            
         }
 
         private void btnCirculo_Click(object sender, EventArgs e)
@@ -79,6 +80,16 @@ namespace AHSRadarUtil
         {
             Airac airac = new Airac();
             airac.ShowDialog();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            //Comprobar si existe el archivo puntosSignigicativos.csv
+            if (!File.Exists("puntosSignificativos.csv"))
+            {
+                MessageBox.Show("No se encontró el archivo puntosSignificativos.csv. Descarge los archivos ENR_4_1_en.csv y ENR_4_4_en.csv. Pulsar el boton de Airac y añada los archivos y presione Generar.");
+            }
+            
         }
     }
 }
