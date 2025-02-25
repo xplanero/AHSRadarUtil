@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace AHSRadarUtil
+﻿namespace AHSRadarUtil
 {
     public partial class BuscarPunto : Form
     {
         private Dictionary<string, string> puntosDict = new Dictionary<string, string>();
-        
+
         public string CoordenadasSeleccionadas { get; private set; }
         public BuscarPunto()
         {

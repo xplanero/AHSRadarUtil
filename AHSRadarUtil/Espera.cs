@@ -35,7 +35,7 @@
                 tBoxFijo.Text = formBuscar.CoordenadasSeleccionadas;
             }
         }
-        
+
 
         private void btnDibujar_Click(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Text.RegularExpressions;
 namespace AHSRadarUtil
 {
     public partial class Airac : Form
@@ -31,6 +32,13 @@ namespace AHSRadarUtil
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            //Comprobar si se han seleccionado los archivos
+            if (string.IsNullOrEmpty(tBoxFijos.Text) || string.IsNullOrEmpty(tBoxRadioAyudas.Text))
+            {
+                MessageBox.Show("Debe seleccionar los archivos de fijos y radioayudas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             List<Punto> puntos = new List<Punto>();
 
             puntos.AddRange(CargarCSV(tBoxFijos.Text, 3, 10, 11));
@@ -40,41 +48,18 @@ namespace AHSRadarUtil
 
             MostrarDatosEnGrid(puntos);
             GuardarCSV(puntos, "puntosSignificativos.csv");
+            //Extraer el AIRAC del nombre del archivo con el patron año_00 (ejemplo: 2021_00)
+            string airac = Regex.Match(tBoxFijos.Text, @"\d{4}_\d{2}").Value;
+            //Guardamos el nombre la variable airac en un archivo de configuracion del proyecto
+            if (string.IsNullOrEmpty(airac))
+            {
+                MessageBox.Show("No se pudo extraer el AIRAC del nombre del archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            File.WriteAllText("airac.txt", airac);
         }
-        //private void CargarCSV(string filePath, int columnaFijo, int columnaLatitud, int columnaLongitud)
-        //{
-        //    try
-        //    {
-        //        var lines = File.ReadAllLines(filePath);
-        //        if (lines.Length == 0)
-        //        {
-        //            MessageBox.Show("El archivo está vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            return;
-        //        }
 
-        //        var dt = new DataTable();
-        //        dt.Columns.Add("Identificador");
-        //        dt.Columns.Add("Latitud");
-        //        dt.Columns.Add("Longitud");
 
-        //        foreach (var line in lines.Skip(1)) // Omitir encabezado
-        //        {
-        //            var columns = line.Split(';'); // Separador CSV
-
-        //            if (columns.Length >= 5) // Verificar que existan columnas suficientes
-        //            {
-        //                Coordenadas coordenadas = new Coordenadas(columns[columnaLatitud], columns[columnaLongitud]);
-        //                dt.Rows.Add(columns[columnaFijo], coordenadas.Latitud, coordenadas.Longitud);
-        //            }
-        //        }
-
-        //        dataGridView1.DataSource = dt; // Mostrar en DataGridView
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al leer el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
         private List<Punto> CargarCSV(string filePath, int columnaFijo, int columnaLatitud, int columnaLongitud)
         {
             List<Punto> puntos = new List<Punto>();
@@ -94,7 +79,7 @@ namespace AHSRadarUtil
 
                     if (columns.Length > Math.Max(columnaFijo, Math.Max(columnaLatitud, columnaLongitud)))
                     {
-                                                
+
                         puntos.Add(new Punto(columns[columnaFijo], columns[columnaLatitud], columns[columnaLongitud]));
 
                     }

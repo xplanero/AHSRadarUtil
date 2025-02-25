@@ -5,16 +5,10 @@ namespace AHSRadarUtil
         public Principal()
         {
             InitializeComponent();
-            
+
         }
 
-        private void btnCirculo_Click(object sender, EventArgs e)
-        {
-            Circulo circulo = new Circulo();
-            circulo.ShowDialog(); //Bloquea el formulario principal
-            //circulo.Show();     //No bloquea el formulario principal
-        }
-
+        
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -89,7 +83,18 @@ namespace AHSRadarUtil
             {
                 MessageBox.Show("No se encontró el archivo puntosSignificativos.csv. Descarge los archivos ENR_4_1_en.csv y ENR_4_4_en.csv. Pulsar el boton de Airac y añada los archivos y presione Generar.");
             }
-            
+            //Comprobar si existe el archivo airac.txt
+            if (File.Exists("airac.txt"))
+            {
+                //Lee el archivo airac.txt
+                string airac = File.ReadAllText("airac.txt");
+                //Extraemos la primera linea del archivo
+                string[] lineas = airac.Split('\n');
+                //Mostramos el airac en el label
+                lblAirac.Text = lineas[0];
+
+            }
+
         }
     }
 }

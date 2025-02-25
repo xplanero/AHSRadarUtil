@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace AHSRadarUtil
+﻿namespace AHSRadarUtil
 {
     public partial class DibujarSegmentos : Form
     {
@@ -17,7 +6,7 @@ namespace AHSRadarUtil
         {
             InitializeComponent();
 
-            
+
         }
         /// <summary>
         /// Lee el texto del portapapeles y lo convierte en una lista de segmentos.
