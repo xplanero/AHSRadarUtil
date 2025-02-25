@@ -35,6 +35,7 @@
             btnActualizar = new Button();
             btnCoordAHS = new Button();
             lblCoordAHS = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnMwnu
@@ -95,11 +96,21 @@
             lblCoordAHS.TabIndex = 12;
             lblCoordAHS.Text = "Archivo de coordenadas AHS.";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(173, 96);
+            label1.Name = "label1";
+            label1.Size = new Size(764, 25);
+            label1.TabIndex = 13;
+            label1.Text = "Modificar para utilizar la base de datos de Airac para actualizar directamente el archivo de radar";
+            // 
             // Fixes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(735, 200);
+            ClientSize = new Size(1104, 200);
+            Controls.Add(label1);
             Controls.Add(lblCoordAHS);
             Controls.Add(btnMwnu);
             Controls.Add(lblCoordAIP);
@@ -122,5 +133,6 @@
         private Button btnActualizar;
         private Button btnCoordAHS;
         private Label lblCoordAHS;
+        private Label label1;
     }
 }
