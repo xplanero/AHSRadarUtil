@@ -108,6 +108,10 @@ namespace AHSRadarUtil
             this.Close();
         }
 
-
+        private void btnSQlite_Click(object sender, EventArgs e)
+        {
+            SQlite sqlite = new SQlite();
+            sqlite.Show();
+        }
     }
 }

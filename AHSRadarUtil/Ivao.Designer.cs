@@ -32,6 +32,7 @@
             btnAreasHigh = new Button();
             btnMenu = new Button();
             btnHolding = new Button();
+            btnSQlite = new Button();
             SuspendLayout();
             // 
             // btnAreasHigh
@@ -46,7 +47,7 @@
             // 
             // btnMenu
             // 
-            btnMenu.Location = new Point(347, 206);
+            btnMenu.Location = new Point(290, 176);
             btnMenu.Margin = new Padding(4, 5, 4, 5);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(107, 38);
@@ -66,11 +67,22 @@
             btnHolding.UseVisualStyleBackColor = true;
             btnHolding.Click += btnHolding_Click;
             // 
+            // btnSQlite
+            // 
+            btnSQlite.Location = new Point(274, 59);
+            btnSQlite.Name = "btnSQlite";
+            btnSQlite.Size = new Size(112, 34);
+            btnSQlite.TabIndex = 13;
+            btnSQlite.Text = "SQlite";
+            btnSQlite.UseVisualStyleBackColor = true;
+            btnSQlite.Click += btnSQlite_Click;
+            // 
             // Ivao
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(505, 272);
+            ClientSize = new Size(413, 221);
+            Controls.Add(btnSQlite);
             Controls.Add(btnHolding);
             Controls.Add(btnMenu);
             Controls.Add(btnAreasHigh);
@@ -85,5 +97,6 @@
         private Button btnAreasHigh;
         private Button btnMenu;
         private Button btnHolding;
+        private Button btnSQlite;
     }
 }
