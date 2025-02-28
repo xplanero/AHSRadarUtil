@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using System.Text;
 
 namespace AHSRadarUtil
 {
@@ -18,50 +19,8 @@ namespace AHSRadarUtil
             MostrarEstructuraEnGrid();
             MostrarEstructuraBD();
         }
-        private void CargarDatos()
-        {
-            using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
-            {
-                try
-                {
-                    conexion.Open();
-                    string query = "SELECT * FROM tu_tabla"; // Reemplaza con el nombre de tu tabla
+        
 
-                    SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, conexion);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    // Asignar los datos a un DataGridView
-                    dataGridView1.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
-        private void CargarTablas()
-        {
-            using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
-            {
-                try
-                {
-                    conexion.Open();
-                    string query = "SELECT name AS 'Nombre de la Tabla' FROM sqlite_master WHERE type='table' ORDER BY name;";
-
-                    SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, conexion);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    // Asignar los datos al DataGridView
-                    dataGridView1.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
         private void MostrarEstructuraEnGrid()
         {
             using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
@@ -180,9 +139,9 @@ namespace AHSRadarUtil
             return -1; // Devuelve -1 si no se encontró el aeropuerto
         }
 
-        private List<(double, double, double, double)> ObtenerCoordenadasTaxiPath(int airportID)
+        private List<(Coordenadas, Coordenadas)> ObtenerCoordenadasTaxiPath(int airportID)
         {
-            List<(double, double, double, double)> coordenadas = new List<(double, double, double, double)>();
+            List<(Coordenadas, Coordenadas)> coordenadas = new List<(Coordenadas, Coordenadas)>();
 
             using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
             {
@@ -190,7 +149,7 @@ namespace AHSRadarUtil
                 {
                     conexion.Open();
                     string query = "SELECT start_laty, start_lonx, end_laty, end_lonx FROM taxi_path WHERE airport_id = @airportID";
-
+                    
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
                     {
                         cmd.Parameters.AddWithValue("@airportID", airportID);
@@ -202,8 +161,11 @@ namespace AHSRadarUtil
                                 double startLonx = reader.GetDouble(1);
                                 double endLaty = reader.GetDouble(2);
                                 double endLonx = reader.GetDouble(3);
+                                Coordenadas startCoordenadas = new Coordenadas(startLaty, startLonx);
+                                Coordenadas endCoordenadas = new Coordenadas(endLaty, endLonx);
 
-                                coordenadas.Add((startLaty, startLonx, endLaty, endLonx));
+
+                                coordenadas.Add((startCoordenadas, endCoordenadas));
                             }
                         }
                     }
@@ -225,7 +187,7 @@ namespace AHSRadarUtil
                 return;
             }
 
-            List<(double, double, double, double)> coordenadas = ObtenerCoordenadasTaxiPath(airportID);
+            List<(Coordenadas, Coordenadas)> coordenadas = ObtenerCoordenadasTaxiPath(airportID);
 
             if (coordenadas.Count == 0)
             {
@@ -233,12 +195,26 @@ namespace AHSRadarUtil
             }
             else
             {
+
+                //Pegar en el portapapeles
+                StringBuilder sb = new StringBuilder();
+                
                 foreach (var coord in coordenadas)
                 {
-                    MessageBox.Show($"Inicio: ({coord.Item1}, {coord.Item2}) - Fin: ({coord.Item3}, {coord.Item4})");
+                    sb.AppendLine($"{coord.Item1.ObtenerCoordenadasDMS()} {coord.Item2.ObtenerCoordenadasDMS()}");
                 }
+
+                Clipboard.SetText(sb.ToString());
+                MessageBox.Show("Coordenadas copiadas al portapapeles.");
+                //Abrir el formulario de dibujo
+                DibujarSegmentos formDibujar = new DibujarSegmentos();
+                formDibujar.ShowDialog();
+
+
+
             }
         }
+
 
     }
 }

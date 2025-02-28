@@ -32,6 +32,7 @@
                 //Eliminar espacios en blanco al principio y al final de la línea
                 string lineaLimpia = line.Trim();
                 var parts = lineaLimpia.Split(' ');
+                
                 if (parts.Length != 4)
                 {
                     MessageBox.Show("Formato incorrecto en la línea: " + line);
