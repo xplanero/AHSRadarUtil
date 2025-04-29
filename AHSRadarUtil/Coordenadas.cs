@@ -136,8 +136,9 @@ namespace AHSRadarUtil
             double h = Longitud;
             double k = Latitud;
             radio = radio / 60;
-            int numeroPuntos = 60;
-            int numeroEspacios = 26;
+            int numeroPuntos = 18;
+            int numeroEspacios = 0;
+            string color = "parking";
             string espacios = new string(' ', numeroEspacios);
 
             double incrementoAngular = 2 * Math.PI / numeroPuntos;
@@ -156,13 +157,13 @@ namespace AHSRadarUtil
                 siguiente.Latitud = k + radio * Math.Sin(angulo) * 0.878;
                 siguiente.Longitud = h + radio * Math.Cos(angulo);
 
-                sb.AppendLine($"{espacios}{anterior.ObtenerCoordenadasDMS()} {siguiente.ObtenerCoordenadasDMS()}");
+                sb.AppendLine($"{espacios}{anterior.ObtenerCoordenadasDMS()} {siguiente.ObtenerCoordenadasDMS()} {color}");
 
                 anterior.Latitud = siguiente.Latitud;
                 anterior.Longitud = siguiente.Longitud;
 
             }
-            sb.Append($"{espacios}{anterior.ObtenerCoordenadasDMS()} {inicial.ObtenerCoordenadasDMS()}");
+            sb.Append($"{espacios}{anterior.ObtenerCoordenadasDMS()} {inicial.ObtenerCoordenadasDMS()} {color}");
             Clipboard.SetText(sb.ToString());
 
         }

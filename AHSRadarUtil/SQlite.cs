@@ -16,49 +16,23 @@ namespace AHSRadarUtil
             InitializeComponent();
             //CargarDatos();
             //CargarTablas();
-            MostrarEstructuraEnGrid();
-            MostrarEstructuraBD();
+            //MostrarEstructuraEnGrid();
+            //MostrarEstructuraBD();
         }
-        
 
-        private void MostrarEstructuraEnGrid()
-        {
-            using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
-            {
-                try
-                {
-                    conexion.Open();
-                    string query = @"
-                SELECT m.name AS 'Tabla', p.name AS 'Columna', p.type AS 'Tipo', p.pk AS 'Clave Primaria'
-                FROM sqlite_master m
-                JOIN pragma_table_info(m.name) p
-                WHERE m.type = 'table'
-                ORDER BY m.name, p.cid;";
-
-                    SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, conexion);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    dataGridView1.DataSource = dt;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
         private void MostrarEstructuraBD()
         {
+            treeView1.Nodes.Clear();
+            TreeNode rootNode = new TreeNode("Base de Datos");
+            treeView1.Nodes.Add(rootNode);
+
             using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
             {
                 try
                 {
                     conexion.Open();
-                    treeView1.Nodes.Clear();
-                    TreeNode rootNode = new TreeNode("Base de Datos");
-                    treeView1.Nodes.Add(rootNode);
 
-                    // Obtener todas las tablas
+                    // Obtener lista de tablas
                     string queryTablas = "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;";
                     using (SQLiteCommand cmd = new SQLiteCommand(queryTablas, conexion))
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
@@ -66,7 +40,7 @@ namespace AHSRadarUtil
                         while (reader.Read())
                         {
                             string nombreTabla = reader["name"].ToString();
-                            TreeNode tablaNode = new TreeNode(nombreTabla);
+                            TreeNode tablaNode = new TreeNode($"📂 {nombreTabla}");
                             rootNode.Nodes.Add(tablaNode);
 
                             // Obtener columnas de la tabla
@@ -78,37 +52,75 @@ namespace AHSRadarUtil
                                 {
                                     string nombreColumna = readerColumnas["name"].ToString();
                                     string tipoColumna = readerColumnas["type"].ToString();
-                                    tablaNode.Nodes.Add(new TreeNode($"{nombreColumna} ({tipoColumna})"));
+                                    bool esPrimaria = readerColumnas["pk"].ToString() == "1";
+                                    string columnaTexto = esPrimaria ? $"🔑 {nombreColumna} ({tipoColumna})" : $"{nombreColumna} ({tipoColumna})";
+                                    tablaNode.Nodes.Add(new TreeNode(columnaTexto));
                                 }
                             }
 
-                            // Obtener índices de la tabla
-                            string queryIndices = $"PRAGMA index_list({nombreTabla});";
-                            using (SQLiteCommand cmdIndices = new SQLiteCommand(queryIndices, conexion))
-                            using (SQLiteDataReader readerIndices = cmdIndices.ExecuteReader())
+                            // Obtener relaciones (claves foráneas)
+                            string queryRelaciones = $"PRAGMA foreign_key_list({nombreTabla});";
+                            using (SQLiteCommand cmdRelaciones = new SQLiteCommand(queryRelaciones, conexion))
+                            using (SQLiteDataReader readerRelaciones = cmdRelaciones.ExecuteReader())
                             {
-                                while (readerIndices.Read())
+                                while (readerRelaciones.Read())
                                 {
-                                    string nombreIndice = readerIndices["name"].ToString();
-                                    TreeNode indiceNode = new TreeNode($"Índice: {nombreIndice}");
-                                    tablaNode.Nodes.Add(indiceNode);
+                                    string tablaReferencia = readerRelaciones["table"].ToString();
+                                    string columnaOrigen = readerRelaciones["from"].ToString();
+                                    string columnaDestino = readerRelaciones["to"].ToString();
+                                    string relacionTexto = $"🔗 FK: {columnaOrigen} → {tablaReferencia}({columnaDestino})";
+                                    tablaNode.Nodes.Add(new TreeNode(relacionTexto));
                                 }
                             }
                         }
                     }
-
-                    treeView1.ExpandAll(); // Expande todo el árbol al cargar
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error al escanear la base de datos: " + ex.Message);
+                }
+            }
+
+            treeView1.ExpandAll();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node.Text.StartsWith("📂 "))
+            {
+                string nombreTabla = e.Node.Text.Replace("📂 ", "");
+                MostrarDatosTabla(nombreTabla);
+            }
+        }
+
+        private void MostrarDatosTabla(string nombreTabla)
+        {
+            using (SQLiteConnection conexion = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    conexion.Open();
+                    string query = $"SELECT * FROM {nombreTabla} LIMIT 100"; // Muestra solo los primeros 100 registros
+
+                    SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, conexion);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar datos de la tabla: " + ex.Message);
                 }
             }
         }
 
+
+        
+
         private void btnBuscarTaxi_Click(object sender, EventArgs e)
         {
-            
+
             BuscarYMostrarCoordenadas(tBoxAeropuerto.Text);
         }
         private int ObtenerAirportID(string ident)
@@ -149,7 +161,7 @@ namespace AHSRadarUtil
                 {
                     conexion.Open();
                     string query = "SELECT start_laty, start_lonx, end_laty, end_lonx FROM taxi_path WHERE airport_id = @airportID";
-                    
+
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conexion))
                     {
                         cmd.Parameters.AddWithValue("@airportID", airportID);
@@ -198,7 +210,7 @@ namespace AHSRadarUtil
 
                 //Pegar en el portapapeles
                 StringBuilder sb = new StringBuilder();
-                
+
                 foreach (var coord in coordenadas)
                 {
                     sb.AppendLine($"{coord.Item1.ObtenerCoordenadasDMS()} {coord.Item2.ObtenerCoordenadasDMS()}");
@@ -215,6 +227,19 @@ namespace AHSRadarUtil
             }
         }
 
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Archivos SQLite (*.sqlite;*.db)|*.sqlite;*.db",
+                Title = "Selecciona una base de datos SQLite"
+            };
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                connectionString = $"Data Source={openFileDialog.FileName};Version=3;";
+                MostrarEstructuraBD();
+            }
+        }
     }
 }

@@ -32,6 +32,7 @@
             treeView1 = new TreeView();
             tBoxAeropuerto = new TextBox();
             btnBuscarTaxi = new Button();
+            btnCargar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             treeView1.Name = "treeView1";
             treeView1.Size = new Size(642, 815);
             treeView1.TabIndex = 1;
+            treeView1.AfterSelect += treeView1_AfterSelect;
             // 
             // tBoxAeropuerto
             // 
@@ -68,11 +70,22 @@
             btnBuscarTaxi.UseVisualStyleBackColor = true;
             btnBuscarTaxi.Click += btnBuscarTaxi_Click;
             // 
+            // btnCargar
+            // 
+            btnCargar.Location = new Point(359, 32);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(112, 34);
+            btnCargar.TabIndex = 4;
+            btnCargar.Text = "Cargar";
+            btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
+            // 
             // SQlite
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2386, 839);
+            Controls.Add(btnCargar);
             Controls.Add(btnBuscarTaxi);
             Controls.Add(tBoxAeropuerto);
             Controls.Add(treeView1);
@@ -90,5 +103,6 @@
         private TreeView treeView1;
         private TextBox tBoxAeropuerto;
         private Button btnBuscarTaxi;
+        private Button btnCargar;
     }
 }
